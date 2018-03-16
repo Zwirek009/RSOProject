@@ -1,11 +1,9 @@
-package pl.pw.user;
+package pl.pw.user.domain;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
-import pl.pw.user.User;
-import pl.pw.user.UserService;
 
 @Component
 @RequiredArgsConstructor

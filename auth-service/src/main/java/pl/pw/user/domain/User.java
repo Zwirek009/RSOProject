@@ -1,4 +1,4 @@
-package pl.pw.user;
+package pl.pw.user.domain;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
