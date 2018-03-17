@@ -7,6 +7,10 @@ services:
       - "8080:8080"
     links:
       - redis:redis
+  test-service:
+    build: ./test-service
+    ports:
+      - "8081:8080"
   redis:
     image: "redis:alpine"
     ports:
