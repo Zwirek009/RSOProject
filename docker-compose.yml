@@ -11,6 +11,10 @@ services:
     build: ./test-service
     ports:
       - "8081:8080"
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "3000:3000"
   redis:
     image: "redis:alpine"
     ports:
