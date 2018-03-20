@@ -2,9 +2,12 @@
   "name": "api-gateway",
   "private": true,
   "scripts": {
-    "start": "node src/index.js"
+    "start": "nodemon src/index.js"
   },
   "dependencies": {
-    "koa": "^2.5.0"
+    "koa": "^2.5.0",
+    "koa-bodyparser": "^4.2.0",
+    "node-fetch": "^2.1.1",
+    "nodemon": "^1.17.2"
   }
 }
