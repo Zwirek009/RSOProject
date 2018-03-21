@@ -13,11 +13,11 @@
       "method": "DELETE"
     }
   },
-  "/api/auth/users/current": {
+  "/api/users/current": {
     "GET": {
       "permissions": "USER",
       "serivce": "auth",
-      "endpoint": "users/current",
+      "endpoint": "/users/current",
       "method": "GET"
     }
   }
