@@ -1,0 +1,24 @@
+{
+  "/api/sessions": {
+    "POST": {
+      "permissions": "*",
+      "serivce": "auth",
+      "endpoint": "/sessions",
+      "method": "POST"
+    },
+    "DELETE": {
+      "permissions": "*",
+      "serivce": "auth",
+      "endpoint": "/sessions",
+      "method": "DELETE"
+    }
+  },
+  "/api/auth/users/current": {
+    "GET": {
+      "permissions": "USER",
+      "serivce": "auth",
+      "endpoint": "users/current",
+      "method": "GET"
+    }
+  }
+}

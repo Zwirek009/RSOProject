@@ -1,5 +1,9 @@
+const fetch = require('node-fetch')
+
 exports.auth = async (ctx, next) => {
-  console.log("LOG", ctx.request)
-    console.log("LOG", ctx.request.body)
+  const mach = ctx.match
+  if (match.permissions == "*") {
     next()
+  }
+
 }

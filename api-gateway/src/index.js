@@ -5,9 +5,10 @@ app.use(bodyParser())
 
 const { auth } = require('./auth')
 const { proxyRequest } = require('./proxyRequest')
+const { matchRequest } = require('./matchRequest')
 
 app
+  .use(matchRequest)
   .use(auth)
-  .use(proxyRequest)
 
 app.listen(3000)
