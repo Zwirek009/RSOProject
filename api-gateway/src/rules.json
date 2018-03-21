@@ -2,13 +2,13 @@
   "/api/sessions": {
     "POST": {
       "permissions": "*",
-      "serivce": "auth",
+      "service": "auth",
       "endpoint": "/sessions",
       "method": "POST"
     },
     "DELETE": {
       "permissions": "*",
-      "serivce": "auth",
+      "service": "auth",
       "endpoint": "/sessions",
       "method": "DELETE"
     }
@@ -16,9 +16,33 @@
   "/api/users/current": {
     "GET": {
       "permissions": "USER",
-      "serivce": "auth",
-      "endpoint": "/users/current",
+      "service": "auth",
+      "endpoint": "/current",
       "method": "GET"
+    }
+  },
+  "/api/users": {
+    "POST": {
+      "permissions": "*",
+      "service": "auth",
+      "endpoint": "/users",
+      "method": "POST"
+    }
+  },
+  "/api/test/some": {
+    "GET": {
+      "permissions": "*",
+      "service": "test",
+      "endpoint": "/test/some",
+      "method": "GET"
+    }
+  },
+  "/api/test/wtf": {
+    "POST": {
+      "permissions": "*",
+      "service": "test",
+      "endpoint": "/test/wtf",
+      "method": "POST"
     }
   }
 }

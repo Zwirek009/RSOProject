@@ -47,6 +47,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/users/*").authenticated()
+                .antMatchers(HttpMethod.POST,"/users/*").authenticated()
                 .and()
                 .formLogin().loginPage("/sessions")
                 .successHandler(authenticationSuccessHandler)

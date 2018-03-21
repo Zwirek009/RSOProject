@@ -3,12 +3,13 @@ const app = new Koa()
 const bodyParser = require('koa-bodyparser');
 app.use(bodyParser())
 
-const { auth } = require('./auth')
-const { proxyRequest } = require('./proxyRequest')
+const { authRequest } = require('./authRequest')
 const { matchRequest } = require('./matchRequest')
+const { fetchRequest } = require('./fetchRequest')
 
 app
   .use(matchRequest)
-  .use(auth)
+  .use(authRequest)
+  .use(fetchRequest)
 
 app.listen(3000)

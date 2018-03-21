@@ -3,18 +3,18 @@ const { hosts } = require('./properties')
 
 const authHost = hosts.auth
 
-const AUTH_URL = `http://${authHost}:8081/users/current`
+const AUTH_URL = `http://${authHost}/users/current`
 
-exports.auth = async (ctx, next) => {
+exports.authRequest = async (ctx, next) => {
   const match = ctx.match
   if (match.permissions == "*") {
     ctx.headers.userId = ""
-    next()
+    await next()
+    return;
   }
   const res = await checkAuth(ctx)
   ctx.headers.userId = res.id
-  ctx.body = "XDDD"
-  next()
+  await next()
 }
 
 checkAuth = async (ctx) => {
@@ -26,7 +26,6 @@ checkAuth = async (ctx) => {
     ctx.throw(500)
   }
   if (res.status == 401) {
-    console.log("unauth")
     ctx.throw(401, 'Unauthorized')
   }
   return res

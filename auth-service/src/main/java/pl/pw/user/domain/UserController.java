@@ -2,10 +2,7 @@ package pl.pw.user.domain;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.pw.user.domain.UserFactory;
 import pl.pw.user.domain.UserService;
 import pl.pw.user.dto.UserInDto;
@@ -19,7 +16,7 @@ class UserController {
     private final UserService userService;
 
     @PostMapping()
-    public ResponseEntity createUser(UserInDto userDto) {
+    public ResponseEntity createUser(@RequestBody UserInDto userDto) {
         userService.save(UserFactory.createUser(userDto));
         return ResponseEntity.ok().build();
     }
