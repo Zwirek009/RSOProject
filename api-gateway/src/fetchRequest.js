@@ -6,6 +6,7 @@ const { hosts } = require('./properties')
 exports.fetchRequest = restEndpoint(async ctx => {
   const uri = prepareUri(ctx)
   const data = prepareData(ctx)
+  console.log(uri)
   const res = await fetch(uri, data)
     .then(res => res.text())
     .catch(error => console.log(error) && null)
@@ -13,7 +14,8 @@ exports.fetchRequest = restEndpoint(async ctx => {
 })
 
 function prepareUri(ctx) {
-  return 'http://' + hosts[ctx.match.service] + ctx.match.endpoint + '?' + ctx.request.querystring
+  const querystring = ctx.request.querystring ? '?' + ctx.request.querystring : ''
+  return 'http://' + hosts[ctx.match.service] + ctx.match.endpoint + querystring
 }
 
 function prepareData(ctx) {

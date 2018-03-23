@@ -3,7 +3,6 @@ const rules = require('./rules')
 exports.matchRequest = async (ctx, next) => {
   const match = matchUrl(ctx.request.url, ctx.method)
   if(!match) {
-    console.log("4000004")
     ctx.throw(404)
   }
   ctx.match = match

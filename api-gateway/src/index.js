@@ -5,11 +5,13 @@ app.use(bodyParser())
 
 const { authRequest } = require('./authRequest')
 const { matchRequest } = require('./matchRequest')
+const { loginRequest } = require('./loginRequest')
 const { fetchRequest } = require('./fetchRequest')
 
 app
   .use(matchRequest)
   .use(authRequest)
+  .use(loginRequest)
   .use(fetchRequest)
 
 app.listen(3000)
