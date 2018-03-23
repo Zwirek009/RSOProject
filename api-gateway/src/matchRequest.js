@@ -3,6 +3,7 @@ const rules = require('./rules')
 exports.matchRequest = async (ctx, next) => {
   const match = matchUrl(ctx.request.url, ctx.method)
   if(!match) {
+    console.log("404")
     ctx.throw(404)
   }
   ctx.match = match
@@ -10,8 +11,9 @@ exports.matchRequest = async (ctx, next) => {
 }
 
 function matchUrl(url, method) {
-  const rule = Object.keys(rules).filter(rule => url.match(rule))
-  return rule.length == 1 ? matchMethod(rules[rule[0]], method) : null
+  //const rule = Object.keys(rules).filter(rule => url.match(rule))
+  rule = rules[url]
+  return rule ? matchMethod(rule, method) : null
 }
 
 function matchMethod(methods, _method) {

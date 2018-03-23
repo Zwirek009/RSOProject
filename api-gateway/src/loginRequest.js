@@ -20,7 +20,7 @@ exports.loginRequest = async (ctx, next) => {
         "Content-type": "application/x-www-form-urlencoded"
       },
       body: querystring.stringify(ctx.request.body)
-    }).catch((error) =>console.log(error) || null)
+    }).catch((error) => console.log(error) || null)
     if (!res) {
       ctx.throw(500)
     }
