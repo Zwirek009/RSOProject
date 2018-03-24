@@ -2,7 +2,7 @@
   "name": "api-gateway",
   "private": true,
   "scripts": {
-    "start": "nodemon src/index.js"
+    "start": "node src/index.js"
   },
   "dependencies": {
     "koa": "^2.5.0",

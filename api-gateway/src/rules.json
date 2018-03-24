@@ -17,13 +17,13 @@
     "GET": {
       "permissions": "USER",
       "service": "auth",
-      "endpoint": "/current",
+      "endpoint": "/users/current",
       "method": "GET"
     }
   },
   "/api/users/.*": {
     "GET": {
-      "permissions": "USER",
+      "permissions": "*",
       "service": "auth",
       "endpoint": "/users/.*",
       "method": "GET"

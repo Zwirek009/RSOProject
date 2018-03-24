@@ -1,6 +1,12 @@
 version: '3'
 services:
-
+  api-gateway:
+    build: ./api-gateway
+    environment:
+      testService: test-service
+      authService: auth-service
+    ports:
+      - "3000:3000"
   auth-service:
     build: ./auth-service
     ports:
@@ -11,10 +17,6 @@ services:
     build: ./test-service
     ports:
       - "8081:8080"
-  api-gateway:
-    build: ./api-gateway
-    ports:
-      - "3000:3000"
   redis:
     image: "redis:alpine"
     ports:
