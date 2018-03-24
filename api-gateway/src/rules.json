@@ -17,7 +17,15 @@
     "GET": {
       "permissions": "USER",
       "service": "auth",
-      "endpoint": "/users/current",
+      "endpoint": "/current",
+      "method": "GET"
+    }
+  },
+  "/api/users/.*": {
+    "GET": {
+      "permissions": "USER",
+      "service": "auth",
+      "endpoint": "/users/.*",
       "method": "GET"
     }
   },
