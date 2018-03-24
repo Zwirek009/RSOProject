@@ -6,7 +6,6 @@ const { hosts } = require('./properties')
 exports.fetchRequest = restEndpoint(async ctx => {
   const uri = prepareUri(ctx)
   const data = prepareData(ctx)
-  console.log(uri,data)
   const res = await fetch(uri, data)
     .then(res => res.text())
     .catch(error => console.log('FETCH ERROR:',error) && null)

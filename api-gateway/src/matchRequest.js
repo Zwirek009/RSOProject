@@ -2,9 +2,8 @@ const rules = require('./rules')
 
 exports.matchRequest = async (ctx, next) => {
   const url = normalizeUrl(ctx.request.url)
-  console.log(url)
   const match = matchRule(url, ctx.method)
-  console.log(match)
+  console.log("MATCH:", match)
   if (!match) {
     ctx.throw(404)
   }
