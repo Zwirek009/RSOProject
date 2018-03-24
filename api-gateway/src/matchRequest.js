@@ -1,7 +1,9 @@
 const rules = require('./rules')
 
 exports.matchRequest = async (ctx, next) => {
-  const match = matchRule(ctx.request.url, ctx.method)
+  const url = normalizeUrl(ctx.request.url)
+  console.log(url)
+  const match = matchRule(url, ctx.method)
   console.log(match)
   if (!match) {
     ctx.throw(404)
@@ -10,17 +12,19 @@ exports.matchRequest = async (ctx, next) => {
   await next()
 }
 
+function normalizeUrl(url) {
+  const paramsPos = url.search(/\?/)
+  return paramsPos > 0 ? url.substring(0, paramsPos) : url
+}
+
 function matchRule(url, method) {
   const rule = rules[url]
   return rule ? rule[method] : matchRegexRule(url, method)
 }
 
 function matchRegexRule(url, method) {
-  if (!url) {
-    return null
-  }
   const matchedRule = Object.keys(rules).filter(rule => matchRegexUrl(url, rule))
-  if(matchedRule.length != 1) {
+  if (matchedRule.length != 1) {
     return null
   }
   const rule = rules[matchedRule][method]
