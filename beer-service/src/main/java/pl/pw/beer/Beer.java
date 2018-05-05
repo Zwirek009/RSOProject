@@ -29,11 +29,10 @@ public class Beer {
 	@JoinColumn(name = "regionId")
 	private Region region;
 
-	public Beer(@NotNull long beerId, long userId, @NotNull String name, @NotNull BeerType beerType, @NotNull String desc, @NotNull Region region) {
-		this.beerId = beerId;
+	public Beer(long userId, @NotNull String name, @NotNull String beerType, @NotNull String desc, @NotNull Region region) {
 		this.userId = userId;
 		this.name = name;
-		this.beerType = beerType;
+		this.beerType = BeerType.valueOf(beerType);
 		this.desc = desc;
 		this.region = region;
 	}

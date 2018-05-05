@@ -22,7 +22,7 @@ class BeerController {
 	}
 
 	@RequestMapping(value = "/get", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
-	public Beer getBeer(@RequestParam Long id) throws IllegalArgumentException {
+	public Beer getBeer(@RequestParam long id) throws IllegalArgumentException {
 		Optional<Beer> beer = beerService.getBeer(id);
 		if (!beer.isPresent()) {
 			throw new IllegalArgumentException("error.beer");
@@ -36,7 +36,7 @@ class BeerController {
 	}
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST, produces = APPLICATION_JSON_VALUE)
-	public void addBeer(@RequestParam Beer beer) {
-		beerService.addBeer(beer);
+	public void addBeer(@RequestParam long userId, @RequestParam String name, @RequestParam String beerType, @RequestParam String desc, @RequestParam String city, @RequestParam String district) {
+		beerService.addBeer(userId, name , beerType, desc, city, district);
 	}
 }

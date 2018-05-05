@@ -17,8 +17,7 @@ public class Region {
 	@NotNull
 	private String district;
 
-	public Region(@NotNull long regionId, @NotNull String city, @NotNull String district) {
-		this.regionId = regionId;
+	public Region(@NotNull String city, @NotNull String district) {
 		this.city = city;
 		this.district = district;
 	}
