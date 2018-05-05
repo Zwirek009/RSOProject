@@ -1,0 +1,901 @@
+[{
+  "name": "Second Sight Medical Products, Inc.",
+  "style": "Remeven",
+  "abv": 53,
+  "blg": 53,
+  "ibu": 90,
+  "date": "5/10/2017",
+  "left": 38,
+  "price": 91
+}, {
+  "name": "MFS Intermediate Income Trust",
+  "style": "Amlodipine and Atorvastatin",
+  "abv": 48,
+  "blg": 57,
+  "ibu": 65,
+  "date": "7/28/2017",
+  "left": 39,
+  "price": 63
+}, {
+  "name": "Global X Health & Wellness Thematic ETF",
+  "style": "stool softener",
+  "abv": 80,
+  "blg": 75,
+  "ibu": 87,
+  "date": "6/7/2017",
+  "left": 26,
+  "price": 57
+}, {
+  "name": "TerraVia Holdings, Inc.",
+  "style": "omeprazole",
+  "abv": 98,
+  "blg": 42,
+  "ibu": 2,
+  "date": "11/23/2017",
+  "left": 40,
+  "price": 51
+}, {
+  "name": "Nuveen Quality Preferred Income Fund 2",
+  "style": "Epsom Salt",
+  "abv": 35,
+  "blg": 22,
+  "ibu": 31,
+  "date": "12/8/2017",
+  "left": 47,
+  "price": 6
+}, {
+  "name": "Companhia Brasileira de Distribuicao",
+  "style": "SPIRONOLACTONE",
+  "abv": 61,
+  "blg": 37,
+  "ibu": 82,
+  "date": "12/20/2017",
+  "left": 88,
+  "price": 100
+}, {
+  "name": "Oxford Lane Capital Corp.",
+  "style": "Pravastatin Sodium",
+  "abv": 32,
+  "blg": 30,
+  "ibu": 87,
+  "date": "3/8/2018",
+  "left": 17,
+  "price": 32
+}, {
+  "name": "Herbalife LTD.",
+  "style": "Famotidine",
+  "abv": 44,
+  "blg": 50,
+  "ibu": 46,
+  "date": "2/4/2018",
+  "left": 26,
+  "price": 4
+}, {
+  "name": "Neonode Inc.",
+  "style": "Nicotrol (Professional Sample)",
+  "abv": 4,
+  "blg": 33,
+  "ibu": 88,
+  "date": "12/2/2017",
+  "left": 84,
+  "price": 33
+}, {
+  "name": "First Trust RiverFront Dynamic Emerging Markets ETF",
+  "style": "Divalproex Sodium",
+  "abv": 30,
+  "blg": 68,
+  "ibu": 55,
+  "date": "7/10/2017",
+  "left": 41,
+  "price": 9
+}, {
+  "name": "Public Storage",
+  "style": "SKIN CAVIAR CONCEALER FOUNDATION SUNSCREEN SPF 15 - Soleil Peche",
+  "abv": 43,
+  "blg": 27,
+  "ibu": 100,
+  "date": "8/1/2017",
+  "left": 63,
+  "price": 91
+}, {
+  "name": "AirMedia Group Inc",
+  "style": "Ambien",
+  "abv": 48,
+  "blg": 5,
+  "ibu": 80,
+  "date": "8/8/2017",
+  "left": 5,
+  "price": 96
+}, {
+  "name": "EV Energy Partners, L.P.",
+  "style": "Clonazepam",
+  "abv": 69,
+  "blg": 14,
+  "ibu": 34,
+  "date": "4/24/2018",
+  "left": 31,
+  "price": 90
+}, {
+  "name": "Banco Santander Chile",
+  "style": "Spironolactone",
+  "abv": 72,
+  "blg": 82,
+  "ibu": 97,
+  "date": "3/30/2018",
+  "left": 44,
+  "price": 85
+}, {
+  "name": "Liberty Media Corporation",
+  "style": "Cuprum 5",
+  "abv": 47,
+  "blg": 59,
+  "ibu": 24,
+  "date": "4/1/2018",
+  "left": 91,
+  "price": 67
+}, {
+  "name": "Sphere 3D Corp.",
+  "style": "Golden Sunshine Far Infrared HOT Herbal",
+  "abv": 12,
+  "blg": 25,
+  "ibu": 88,
+  "date": "7/5/2017",
+  "left": 54,
+  "price": 53
+}, {
+  "name": "Dillard&#39;s, Inc.",
+  "style": "antacid",
+  "abv": 93,
+  "blg": 51,
+  "ibu": 41,
+  "date": "11/19/2017",
+  "left": 75,
+  "price": 6
+}, {
+  "name": "Calamos Convertible Opportunities and Income Fund",
+  "style": "Dandruff",
+  "abv": 29,
+  "blg": 2,
+  "ibu": 79,
+  "date": "3/9/2018",
+  "left": 93,
+  "price": 85
+}, {
+  "name": "Blackrock MuniHoldings Investment Quality Fund",
+  "style": "Dicyclomine Hydrochloride",
+  "abv": 92,
+  "blg": 70,
+  "ibu": 52,
+  "date": "4/20/2018",
+  "left": 75,
+  "price": 3
+}, {
+  "name": "TransCanada Corporation",
+  "style": "Spironolactone",
+  "abv": 26,
+  "blg": 77,
+  "ibu": 14,
+  "date": "3/27/2018",
+  "left": 20,
+  "price": 69
+}, {
+  "name": "Southcross Energy Partners, L.P.",
+  "style": "L OCCITANE SUBLIME BEAUTY BB LIGHT SPF 30 Broad Spectrum Sunscreen",
+  "abv": 9,
+  "blg": 94,
+  "ibu": 96,
+  "date": "8/22/2017",
+  "left": 81,
+  "price": 38
+}, {
+  "name": "Global X SuperDividend REIT ETF",
+  "style": "Ziprasidone Hydrochloride",
+  "abv": 2,
+  "blg": 92,
+  "ibu": 53,
+  "date": "11/17/2017",
+  "left": 95,
+  "price": 52
+}, {
+  "name": "Ambac Financial Group, Inc.",
+  "style": "Laxative",
+  "abv": 2,
+  "blg": 57,
+  "ibu": 5,
+  "date": "5/30/2017",
+  "left": 45,
+  "price": 20
+}, {
+  "name": "GP Investments Acquisition Corp.",
+  "style": "Lithium Carbonate",
+  "abv": 97,
+  "blg": 21,
+  "ibu": 66,
+  "date": "3/4/2018",
+  "left": 12,
+  "price": 4
+}, {
+  "name": "Quantenna Communications, Inc.",
+  "style": "Duloxetine hydrochloride",
+  "abv": 37,
+  "blg": 73,
+  "ibu": 50,
+  "date": "8/25/2017",
+  "left": 63,
+  "price": 94
+}, {
+  "name": "RADA Electronic Industries Ltd.",
+  "style": "Sisamo 40 (Number 67)",
+  "abv": 64,
+  "blg": 64,
+  "ibu": 1,
+  "date": "3/8/2018",
+  "left": 85,
+  "price": 20
+}, {
+  "name": "AMN Healthcare Services Inc",
+  "style": "Zinka Clear Zinc Oxide Sunscreen",
+  "abv": 48,
+  "blg": 63,
+  "ibu": 67,
+  "date": "3/26/2018",
+  "left": 96,
+  "price": 92
+}, {
+  "name": "Boulevard Acquisition Corp. II",
+  "style": "Nasal Decongestant PE",
+  "abv": 60,
+  "blg": 51,
+  "ibu": 69,
+  "date": "10/6/2017",
+  "left": 32,
+  "price": 91
+}, {
+  "name": "Blackrock MuniYield Michigan Quality Fund, Inc.",
+  "style": "First Aid Direct Buffered Eyewash Sterile Isotonic",
+  "abv": 13,
+  "blg": 73,
+  "ibu": 17,
+  "date": "2/1/2018",
+  "left": 83,
+  "price": 6
+}, {
+  "name": "Concordia International Corp.",
+  "style": "SEAWEED MEDICLEAR HEALER AMPOULE",
+  "abv": 57,
+  "blg": 18,
+  "ibu": 55,
+  "date": "10/3/2017",
+  "left": 89,
+  "price": 64
+}, {
+  "name": "Hardinge Inc.",
+  "style": "Lisinopril",
+  "abv": 87,
+  "blg": 57,
+  "ibu": 58,
+  "date": "8/29/2017",
+  "left": 42,
+  "price": 60
+}, {
+  "name": "Voya Emerging Markets High Income Dividend Equity Fund",
+  "style": "Probiotic Restoration",
+  "abv": 12,
+  "blg": 40,
+  "ibu": 89,
+  "date": "7/7/2017",
+  "left": 43,
+  "price": 68
+}, {
+  "name": "Biostage, Inc.",
+  "style": "antacid",
+  "abv": 9,
+  "blg": 8,
+  "ibu": 19,
+  "date": "10/25/2017",
+  "left": 86,
+  "price": 89
+}, {
+  "name": "Extreme Networks, Inc.",
+  "style": "Chloroquine",
+  "abv": 63,
+  "blg": 94,
+  "ibu": 71,
+  "date": "10/19/2017",
+  "left": 88,
+  "price": 32
+}, {
+  "name": "Zion Oil & Gas Inc",
+  "style": "Latanoprost",
+  "abv": 61,
+  "blg": 55,
+  "ibu": 38,
+  "date": "4/16/2018",
+  "left": 5,
+  "price": 49
+}, {
+  "name": "Akebia Therapeutics, Inc.",
+  "style": "Phentermine Hydrochloride",
+  "abv": 93,
+  "blg": 86,
+  "ibu": 28,
+  "date": "6/28/2017",
+  "left": 96,
+  "price": 41
+}, {
+  "name": "Seadrill Limited",
+  "style": "all day relief",
+  "abv": 87,
+  "blg": 31,
+  "ibu": 96,
+  "date": "11/9/2017",
+  "left": 16,
+  "price": 28
+}, {
+  "name": "Art&#39;s-Way Manufacturing Co., Inc.",
+  "style": "TRICARE PRENATAL DHA ONE",
+  "abv": 43,
+  "blg": 36,
+  "ibu": 3,
+  "date": "6/21/2017",
+  "left": 35,
+  "price": 15
+}, {
+  "name": "Hanesbrands Inc.",
+  "style": "Oxygen",
+  "abv": 55,
+  "blg": 81,
+  "ibu": 63,
+  "date": "6/10/2017",
+  "left": 6,
+  "price": 46
+}, {
+  "name": "CABCO Series 2004-101 Trust",
+  "style": "Fentanyl",
+  "abv": 71,
+  "blg": 87,
+  "ibu": 32,
+  "date": "12/21/2017",
+  "left": 37,
+  "price": 81
+}, {
+  "name": "Heidrick & Struggles International, Inc.",
+  "style": "Publix",
+  "abv": 90,
+  "blg": 78,
+  "ibu": 95,
+  "date": "5/31/2017",
+  "left": 10,
+  "price": 91
+}, {
+  "name": "Gaming and Leisure Properties, Inc.",
+  "style": "Dextroamphetamine Saccharate, Amphetamine Aspartate, Dextroamphetamine Sulfate and Amphetamine Sulfate",
+  "abv": 91,
+  "blg": 97,
+  "ibu": 65,
+  "date": "11/22/2017",
+  "left": 2,
+  "price": 61
+}, {
+  "name": "Inter Parfums, Inc.",
+  "style": "NightRelief Free",
+  "abv": 94,
+  "blg": 3,
+  "ibu": 45,
+  "date": "10/4/2017",
+  "left": 3,
+  "price": 80
+}, {
+  "name": "Digital Turbine, Inc.",
+  "style": "Tizanidine",
+  "abv": 99,
+  "blg": 23,
+  "ibu": 11,
+  "date": "9/25/2017",
+  "left": 95,
+  "price": 13
+}, {
+  "name": "NASDAQ TEST STOCK",
+  "style": "Glipizide",
+  "abv": 28,
+  "blg": 66,
+  "ibu": 8,
+  "date": "5/1/2018",
+  "left": 11,
+  "price": 85
+}, {
+  "name": "Automatic Data Processing, Inc.",
+  "style": "Childrens Tylenol",
+  "abv": 12,
+  "blg": 5,
+  "ibu": 56,
+  "date": "10/25/2017",
+  "left": 27,
+  "price": 15
+}, {
+  "name": "Brookline Bancorp, Inc.",
+  "style": "misoprostol",
+  "abv": 98,
+  "blg": 90,
+  "ibu": 73,
+  "date": "6/13/2017",
+  "left": 83,
+  "price": 90
+}, {
+  "name": "MetLife, Inc.",
+  "style": "PETER ISLAND NATURAL MINERALSPF 60",
+  "abv": 14,
+  "blg": 14,
+  "ibu": 55,
+  "date": "10/13/2017",
+  "left": 91,
+  "price": 53
+}, {
+  "name": "Icahn Enterprises L.P.",
+  "style": "Nevirapine",
+  "abv": 28,
+  "blg": 3,
+  "ibu": 50,
+  "date": "1/26/2018",
+  "left": 30,
+  "price": 75
+}, {
+  "name": "Clearfield, Inc.",
+  "style": "Epinephrine",
+  "abv": 70,
+  "blg": 2,
+  "ibu": 44,
+  "date": "1/14/2018",
+  "left": 46,
+  "price": 30
+}, {
+  "name": "Vivint Solar, Inc.",
+  "style": "ibuprofen cold and sinus",
+  "abv": 55,
+  "blg": 21,
+  "ibu": 89,
+  "date": "7/14/2017",
+  "left": 18,
+  "price": 69
+}, {
+  "name": "Voya International High Dividend Equity Income Fund",
+  "style": "Isometheptene-Dichloral-APAP",
+  "abv": 62,
+  "blg": 16,
+  "ibu": 72,
+  "date": "1/15/2018",
+  "left": 83,
+  "price": 93
+}, {
+  "name": "MS Income Securities, Inc.",
+  "style": "Medi-First Burn",
+  "abv": 72,
+  "blg": 44,
+  "ibu": 49,
+  "date": "8/16/2017",
+  "left": 42,
+  "price": 5
+}, {
+  "name": "Colony NorthStar, Inc.",
+  "style": "Mulberry",
+  "abv": 45,
+  "blg": 97,
+  "ibu": 53,
+  "date": "12/4/2017",
+  "left": 78,
+  "price": 34
+}, {
+  "name": "Janus Henderson Small Cap Growth Alpha ETF",
+  "style": "PreviDent 5000 Enamel Protect",
+  "abv": 45,
+  "blg": 78,
+  "ibu": 32,
+  "date": "9/24/2017",
+  "left": 51,
+  "price": 30
+}, {
+  "name": "Brookfield Renewable Partners L.P.",
+  "style": "POST OAK POLLEN",
+  "abv": 98,
+  "blg": 93,
+  "ibu": 98,
+  "date": "9/6/2017",
+  "left": 5,
+  "price": 74
+}, {
+  "name": "D.R. Horton, Inc.",
+  "style": "Childrens Wal-Dryl Allergy",
+  "abv": 43,
+  "blg": 50,
+  "ibu": 41,
+  "date": "9/11/2017",
+  "left": 89,
+  "price": 41
+}, {
+  "name": "Copart, Inc.",
+  "style": "Nighty Nite",
+  "abv": 3,
+  "blg": 86,
+  "ibu": 33,
+  "date": "4/29/2018",
+  "left": 58,
+  "price": 4
+}, {
+  "name": "MoSys, Inc.",
+  "style": "Betamethasone Dipropionate",
+  "abv": 14,
+  "blg": 91,
+  "ibu": 48,
+  "date": "3/10/2018",
+  "left": 91,
+  "price": 84
+}, {
+  "name": "Marinus Pharmaceuticals, Inc.",
+  "style": "Nauzene",
+  "abv": 37,
+  "blg": 42,
+  "ibu": 27,
+  "date": "11/16/2017",
+  "left": 19,
+  "price": 51
+}, {
+  "name": "Verona Pharma plc",
+  "style": "Naproxen Sodium",
+  "abv": 62,
+  "blg": 10,
+  "ibu": 71,
+  "date": "7/28/2017",
+  "left": 77,
+  "price": 96
+}, {
+  "name": "Maui Land & Pineapple Company, Inc.",
+  "style": "EyS Eye Wash",
+  "abv": 89,
+  "blg": 47,
+  "ibu": 60,
+  "date": "10/30/2017",
+  "left": 97,
+  "price": 59
+}, {
+  "name": "Beneficial Bancorp, Inc.",
+  "style": "SODIUM CHLORIDE",
+  "abv": 87,
+  "blg": 51,
+  "ibu": 2,
+  "date": "1/13/2018",
+  "left": 88,
+  "price": 95
+}, {
+  "name": "Safe Bulkers, Inc",
+  "style": "Effexor",
+  "abv": 41,
+  "blg": 86,
+  "ibu": 76,
+  "date": "7/24/2017",
+  "left": 3,
+  "price": 30
+}, {
+  "name": "Eyegate Pharmaceuticals, Inc.",
+  "style": "Meloxicam",
+  "abv": 84,
+  "blg": 5,
+  "ibu": 83,
+  "date": "11/14/2017",
+  "left": 1,
+  "price": 59
+}, {
+  "name": "ON Semiconductor Corporation",
+  "style": "Phenylephrine HCl",
+  "abv": 10,
+  "blg": 80,
+  "ibu": 18,
+  "date": "6/16/2017",
+  "left": 44,
+  "price": 11
+}, {
+  "name": "Allstate Corporation (The)",
+  "style": "Cetirizine Hydrochloride",
+  "abv": 95,
+  "blg": 19,
+  "ibu": 74,
+  "date": "6/3/2017",
+  "left": 63,
+  "price": 65
+}, {
+  "name": "Limbach Holdings, Inc.",
+  "style": "Lymphatic Drainer",
+  "abv": 35,
+  "blg": 35,
+  "ibu": 72,
+  "date": "2/23/2018",
+  "left": 83,
+  "price": 51
+}, {
+  "name": "EV Energy Partners, L.P.",
+  "style": "equaline nighttime",
+  "abv": 9,
+  "blg": 52,
+  "ibu": 86,
+  "date": "10/8/2017",
+  "left": 35,
+  "price": 23
+}, {
+  "name": "Ashford Hospitality Trust Inc",
+  "style": "NiteTime Cough",
+  "abv": 26,
+  "blg": 23,
+  "ibu": 43,
+  "date": "1/6/2018",
+  "left": 98,
+  "price": 59
+}, {
+  "name": "Heritage-Crystal Clean, Inc.",
+  "style": "Citalopram",
+  "abv": 21,
+  "blg": 42,
+  "ibu": 21,
+  "date": "6/15/2017",
+  "left": 81,
+  "price": 88
+}, {
+  "name": "Affiliated Managers Group, Inc.",
+  "style": "Procrastination",
+  "abv": 34,
+  "blg": 34,
+  "ibu": 84,
+  "date": "2/27/2018",
+  "left": 89,
+  "price": 63
+}, {
+  "name": "Sify Technologies Limited",
+  "style": "Plus White Xtra",
+  "abv": 23,
+  "blg": 70,
+  "ibu": 23,
+  "date": "11/8/2017",
+  "left": 16,
+  "price": 97
+}, {
+  "name": "Vident Core US Equity ETF",
+  "style": "Standardized Mite D. pteronyssinus",
+  "abv": 51,
+  "blg": 86,
+  "ibu": 58,
+  "date": "7/31/2017",
+  "left": 15,
+  "price": 33
+}, {
+  "name": "Commerce Bancshares, Inc.",
+  "style": "Colgate Optic White Sparkling Mint Flavor",
+  "abv": 10,
+  "blg": 32,
+  "ibu": 54,
+  "date": "11/11/2017",
+  "left": 55,
+  "price": 25
+}, {
+  "name": "Align Technology, Inc.",
+  "style": "WHITE FLOWER ANALGESIC BALM",
+  "abv": 25,
+  "blg": 49,
+  "ibu": 62,
+  "date": "2/25/2018",
+  "left": 64,
+  "price": 6
+}, {
+  "name": "FlexShares STOXX Global ESG Impact Index Fund",
+  "style": "CEFTRIAXONE",
+  "abv": 38,
+  "blg": 78,
+  "ibu": 3,
+  "date": "6/22/2017",
+  "left": 2,
+  "price": 40
+}, {
+  "name": "Nu Skin Enterprises, Inc.",
+  "style": "HUMCO Potassium Chloride Oral Solution 10%",
+  "abv": 86,
+  "blg": 100,
+  "ibu": 41,
+  "date": "1/13/2018",
+  "left": 61,
+  "price": 60
+}, {
+  "name": "Hingham Institution for Savings",
+  "style": "Amoxicillin and Clavulanate Potassium",
+  "abv": 44,
+  "blg": 37,
+  "ibu": 73,
+  "date": "1/16/2018",
+  "left": 83,
+  "price": 52
+}, {
+  "name": "Nuveen Floating Rate Income Fund",
+  "style": "DEXTROSE",
+  "abv": 91,
+  "blg": 20,
+  "ibu": 52,
+  "date": "3/22/2018",
+  "left": 83,
+  "price": 70
+}, {
+  "name": "Pebblebrook Hotel Trust",
+  "style": "Promethazine Hydrochloride",
+  "abv": 86,
+  "blg": 79,
+  "ibu": 21,
+  "date": "8/23/2017",
+  "left": 100,
+  "price": 100
+}, {
+  "name": "White Mountains Insurance Group, Ltd.",
+  "style": "Lorazepam",
+  "abv": 82,
+  "blg": 68,
+  "ibu": 74,
+  "date": "12/15/2017",
+  "left": 32,
+  "price": 95
+}, {
+  "name": "Shutterfly, Inc.",
+  "style": "LBEL Couleur Luxe Rouge Amplifier XP amplifying SPF 15",
+  "abv": 99,
+  "blg": 54,
+  "ibu": 48,
+  "date": "9/10/2017",
+  "left": 73,
+  "price": 96
+}, {
+  "name": "First Trust Canada AlphaDEX Fund",
+  "style": "RISPERIDONE",
+  "abv": 39,
+  "blg": 51,
+  "ibu": 7,
+  "date": "7/9/2017",
+  "left": 41,
+  "price": 40
+}, {
+  "name": "Costamare Inc.",
+  "style": "Finasteride",
+  "abv": 5,
+  "blg": 57,
+  "ibu": 66,
+  "date": "3/10/2018",
+  "left": 97,
+  "price": 2
+}, {
+  "name": "NewLink Genetics Corporation",
+  "style": "Anti-Bacterial Hand",
+  "abv": 6,
+  "blg": 94,
+  "ibu": 31,
+  "date": "12/25/2017",
+  "left": 7,
+  "price": 97
+}, {
+  "name": "First Trust Dorsey Wright Focus 5 ETF",
+  "style": "Nitrofurantoin Macrocrystals",
+  "abv": 42,
+  "blg": 3,
+  "ibu": 84,
+  "date": "12/24/2017",
+  "left": 97,
+  "price": 44
+}, {
+  "name": "U.S. Bancorp",
+  "style": "Childrens mucus relief",
+  "abv": 34,
+  "blg": 64,
+  "ibu": 5,
+  "date": "2/16/2018",
+  "left": 42,
+  "price": 21
+}, {
+  "name": "Sanderson Farms, Inc.",
+  "style": "Naturasil",
+  "abv": 50,
+  "blg": 28,
+  "ibu": 3,
+  "date": "11/28/2017",
+  "left": 93,
+  "price": 20
+}, {
+  "name": "Anchor Bancorp",
+  "style": "BabyGanics Sunscreen",
+  "abv": 45,
+  "blg": 53,
+  "ibu": 36,
+  "date": "4/26/2018",
+  "left": 86,
+  "price": 83
+}, {
+  "name": "Western Gas Equity Partners, LP",
+  "style": "Mirtazapine",
+  "abv": 78,
+  "blg": 29,
+  "ibu": 63,
+  "date": "6/2/2017",
+  "left": 31,
+  "price": 25
+}, {
+  "name": "Speedway Motorsports, Inc.",
+  "style": "Diphenhydramine HCl and Zinc Acetate",
+  "abv": 75,
+  "blg": 28,
+  "ibu": 26,
+  "date": "7/29/2017",
+  "left": 74,
+  "price": 61
+}, {
+  "name": "Scripps Networks Interactive, Inc",
+  "style": "Rite Aid RENEWAL",
+  "abv": 93,
+  "blg": 66,
+  "ibu": 8,
+  "date": "11/3/2017",
+  "left": 29,
+  "price": 85
+}, {
+  "name": "Vanguard Long-Term Corporate Bond ETF",
+  "style": "Fluocinonide",
+  "abv": 44,
+  "blg": 76,
+  "ibu": 56,
+  "date": "12/29/2017",
+  "left": 35,
+  "price": 67
+}, {
+  "name": "RLJ Entertainment, Inc.",
+  "style": "GUNA-ORAL SPRAY",
+  "abv": 57,
+  "blg": 35,
+  "ibu": 91,
+  "date": "12/13/2017",
+  "left": 75,
+  "price": 83
+}, {
+  "name": "First Trust Large Cap Growth AlphaDEX Fund",
+  "style": "CITALOPRAM",
+  "abv": 41,
+  "blg": 36,
+  "ibu": 89,
+  "date": "1/3/2018",
+  "left": 54,
+  "price": 69
+}, {
+  "name": "ADTRAN, Inc.",
+  "style": "mapap",
+  "abv": 19,
+  "blg": 97,
+  "ibu": 36,
+  "date": "7/11/2017",
+  "left": 41,
+  "price": 77
+}, {
+  "name": "Redhill Biopharma Ltd.",
+  "style": "Stalevo",
+  "abv": 71,
+  "blg": 93,
+  "ibu": 60,
+  "date": "1/19/2018",
+  "left": 48,
+  "price": 51
+}, {
+  "name": "Turkish Investment Fund, Inc. (The)",
+  "style": "GIANT RAGWEED POLLEN",
+  "abv": 65,
+  "blg": 56,
+  "ibu": 98,
+  "date": "2/21/2018",
+  "left": 39,
+  "price": 72
+}, {
+  "name": "Check Point Software Technologies Ltd.",
+  "style": "Leucovorin Calcium",
+  "abv": 75,
+  "blg": 65,
+  "ibu": 14,
+  "date": "11/14/2017",
+  "left": 55,
+  "price": 96
+}]
