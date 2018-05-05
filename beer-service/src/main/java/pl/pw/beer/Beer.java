@@ -11,7 +11,9 @@ public class Beer {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long beerid;
+	private long beerId;
+
+	private long userId;
 
 	@NotNull
 	private String name;
@@ -27,20 +29,29 @@ public class Beer {
 	@JoinColumn(name = "regionId")
 	private Region region;
 
-	public Beer(@NotNull long beerid, @NotNull String name, @NotNull BeerType beerType, @NotNull String desc, @NotNull Region region) {
-		this.beerid = beerid;
+	public Beer(@NotNull long beerId, long userId, @NotNull String name, @NotNull BeerType beerType, @NotNull String desc, @NotNull Region region) {
+		this.beerId = beerId;
+		this.userId = userId;
 		this.name = name;
 		this.beerType = beerType;
 		this.desc = desc;
 		this.region = region;
 	}
 
-	public long getBeerid() {
-		return beerid;
+	public long getUserId() {
+		return userId;
 	}
 
-	public void setBeerid(long beerid) {
-		this.beerid = beerid;
+	public void setUserId(long userId) {
+		this.userId = userId;
+	}
+
+	public long getBeerId() {
+		return beerId;
+	}
+
+	public void setBeerId(long beerId) {
+		this.beerId = beerId;
 	}
 
 	public String getName() {
