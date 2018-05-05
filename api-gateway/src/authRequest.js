@@ -30,3 +30,5 @@ checkAuth = async (ctx) => {
   }
   return res
 }
+
+exports.checkAuth = checkAuth
