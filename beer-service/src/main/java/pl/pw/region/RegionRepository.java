@@ -1,7 +1,6 @@
-package pl.pw.repositories;
+package pl.pw.region;
 
 import org.springframework.data.repository.CrudRepository;
-import pl.pw.models.Region;
 
 public interface RegionRepository extends CrudRepository<Region, Long> {
 }

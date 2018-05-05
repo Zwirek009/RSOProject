@@ -1,4 +1,6 @@
-package pl.pw.models;
+package pl.pw.beer;
+
+import pl.pw.region.Region;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

@@ -1,10 +1,8 @@
-package pl.pw.controllers;
+package pl.pw.beer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import pl.pw.models.Beer;
-import pl.pw.services.BeerService;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -24,10 +22,10 @@ class BeerController {
 	}
 
 	@RequestMapping(value = "/get", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
-	public Beer getBeer(@RequestParam Long id) throws IllegalAccessException {
+	public Beer getBeer(@RequestParam Long id) throws IllegalArgumentException {
 		Optional<Beer> beer = beerService.getBeer(id);
 		if (!beer.isPresent()) {
-			throw new IllegalAccessException("error.beer");
+			throw new IllegalArgumentException("error.beer");
 		}
 		return beer.get();
 	}

@@ -1,4 +1,4 @@
-package pl.pw.models;
+package pl.pw.beer;
 
 public enum BeerType {
 

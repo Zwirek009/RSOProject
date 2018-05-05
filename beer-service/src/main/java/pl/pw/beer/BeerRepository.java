@@ -1,7 +1,6 @@
-package pl.pw.repositories;
+package pl.pw.beer;
 
 import org.springframework.data.repository.CrudRepository;
-import pl.pw.models.Beer;
 
 public interface BeerRepository extends CrudRepository<Beer, Long> {
 }

@@ -1,9 +1,7 @@
-package pl.pw.services;
+package pl.pw.beer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.pw.models.Beer;
-import pl.pw.repositories.BeerRepository;
 
 import java.util.Optional;
 

@@ -1,4 +1,4 @@
-package pl.pw.models;
+package pl.pw.region;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
