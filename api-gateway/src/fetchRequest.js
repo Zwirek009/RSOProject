@@ -25,7 +25,7 @@ function prepareUri(ctx) {
 function prepareData(ctx) {
   const data = {
     method: ctx.method,
-    // headers: prepareHeaders(ctx)
+    headers: prepareHeaders(ctx)
   }
   if (ctx.method != "GET" && ctx.method != "HEAD") {
     body = ctx.request.body
@@ -35,10 +35,11 @@ function prepareData(ctx) {
   return data
 }
 
-// function prepareHeaders(ctx) {
-//   return {
-//     cookie: ctx.headers.cookie,
-//     userId: ctx.headers.userId,
-//     'Content-Type': 'application/json'
-//   }
-// }
+function prepareHeaders(ctx) {
+  return {
+    // cookie: ctx.headers.cookie,
+    // userId: ctx.headers.userId,
+    'Content-Type': 'application/x-www-form-urlencoded',
+
+  }
+}
