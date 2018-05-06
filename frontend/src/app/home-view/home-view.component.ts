@@ -1,6 +1,7 @@
-declare var require: any
+declare var require: any;
 import { Component, OnInit } from '@angular/core';
 const data = require('../../assets/beer_mock.json');
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home-view',
@@ -11,9 +12,17 @@ export class HomeViewComponent implements OnInit {
   displayedColumns = ['name', 'style', 'abv', 'blg', 'ibu', 'date', 'left', 'price'];
   dataSource = ELEMENT_DATA;
   cities = ['Warsaw', 'Wroclaw', 'Gdansk', 'Poznan', 'Lodz'];
-  constructor() { }
+  router: Router;
+  constructor(router: Router) {
+    this.router = router;
+  }
 
   ngOnInit() {
+  }
+
+  check(value: string) {
+    this.router.navigateByUrl('/beer');
+    console.log(value);
   }
 
 }

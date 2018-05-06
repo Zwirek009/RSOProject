@@ -15,7 +15,9 @@
                   </mat-option>
                 </mat-select>
             </mat-form-field>
-            <button mat-button>Filter</button>
+            <div class="buttonHolder">
+              <button mat-button>Filter</button>
+            </div>
       </div>
   </div>
   <div class="rightPanel">
@@ -24,7 +26,7 @@
             <table mat-table #table [dataSource]="dataSource">
                   <ng-container matColumnDef="name">
                     <th mat-header-cell *matHeaderCellDef> Name </th>
-                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                    <td (click)="check(element.name)" mat-cell *matCellDef="let element"> {{element.name}} </td>
                   </ng-container>
               
                   <ng-container matColumnDef="style">

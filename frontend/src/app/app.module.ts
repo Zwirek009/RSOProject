@@ -17,11 +17,16 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { HomeViewComponent } from './home-view/home-view.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule} from '@angular/material/select';
+import { ProfileComponent } from './profile/profile.component';
+import { BeerComponent } from './beer/beer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   { path: '', component: MainPageComponent },
   { path: 'login', component: LoginFormComponent},
-  { path: 'home', component: HomeViewComponent}
+  { path: 'home', component: HomeViewComponent},
+  { path: 'profile', component: ProfileComponent},
+  { path: 'beer', component: BeerComponent}
 ];
 
 @NgModule({
@@ -30,7 +35,9 @@ const appRoutes: Routes = [
     MainPageComponent,
     RegisterFormComponent,
     LoginFormComponent,
-    HomeViewComponent
+    HomeViewComponent,
+    ProfileComponent,
+    BeerComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -38,6 +45,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     ),
     BrowserModule,
+    HttpClientModule,
     MatToolbarModule,
     MatButtonModule,
     MatInputModule,
