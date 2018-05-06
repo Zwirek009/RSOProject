@@ -52,5 +52,13 @@
       "endpoint": "/test/wtf",
       "method": "POST"
     }
+  },
+  "/api/beer/add": {
+    "POST": {
+      "permissions": "*",
+      "service": "beer",
+      "endpoint": "/beer/add",
+      "method": "POST"
+    }
   }
 }
