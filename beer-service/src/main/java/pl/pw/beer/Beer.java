@@ -19,7 +19,19 @@ public class Beer {
 	private String name;
 
 	@NotNull
-	private BeerType beerType;
+	private String style;
+
+	private int abv;
+
+	private int blg;
+
+	private int ibu;
+
+	private long date;
+
+	private int left;
+
+	private int price;
 
 	@NotNull
 	private String desc;
@@ -32,20 +44,18 @@ public class Beer {
 	public Beer() {
 	}
 
-	public Beer(long userId, @NotNull String name, @NotNull String beerType, @NotNull String desc, @NotNull Region region) {
+	public Beer(long userId, @NotNull String name, @NotNull String style, int abv, int blg, int ibu, long date, int left, int price, @NotNull String desc, @NotNull Region region) {
 		this.userId = userId;
 		this.name = name;
-		this.beerType = BeerType.valueOf(beerType);
+		this.style = style;
+		this.abv = abv;
+		this.blg = blg;
+		this.ibu = ibu;
+		this.date = date;
+		this.left = left;
+		this.price = price;
 		this.desc = desc;
 		this.region = region;
-	}
-
-	public long getUserId() {
-		return userId;
-	}
-
-	public void setUserId(long userId) {
-		this.userId = userId;
 	}
 
 	public long getBeerId() {
@@ -56,6 +66,14 @@ public class Beer {
 		this.beerId = beerId;
 	}
 
+	public long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(long userId) {
+		this.userId = userId;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -64,20 +82,68 @@ public class Beer {
 		this.name = name;
 	}
 
+	public String getStyle() {
+		return style;
+	}
+
+	public void setStyle(String style) {
+		this.style = style;
+	}
+
+	public int getAbv() {
+		return abv;
+	}
+
+	public void setAbv(int abv) {
+		this.abv = abv;
+	}
+
+	public int getBlg() {
+		return blg;
+	}
+
+	public void setBlg(int blg) {
+		this.blg = blg;
+	}
+
+	public int getIbu() {
+		return ibu;
+	}
+
+	public void setIbu(int ibu) {
+		this.ibu = ibu;
+	}
+
+	public long getDate() {
+		return date;
+	}
+
+	public void setDate(long date) {
+		this.date = date;
+	}
+
+	public int getLeft() {
+		return left;
+	}
+
+	public void setLeft(int left) {
+		this.left = left;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
 	public String getDesc() {
 		return desc;
 	}
 
 	public void setDesc(String desc) {
 		this.desc = desc;
-	}
-
-	public BeerType getBeerType() {
-		return beerType;
-	}
-
-	public void setBeerType(BeerType beerType) {
-		this.beerType = beerType;
 	}
 
 	public Region getRegion() {

@@ -2,7 +2,6 @@ package pl.pw.beer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.pw.region.Region;
 import pl.pw.region.RegionRepository;
 
 import java.util.List;
@@ -20,17 +19,34 @@ public class BeerService {
 		this.regionRepository = regionRepository;
 	}
 
-	public void addBeer(long userId, String name, String beerType, String desc, String city, String district) {
-		Region region = new Region(city, district);
-		regionRepository.save(region);
-		beerRepository.save(new Beer(userId, name, beerType, desc, region));
+	public void addBeer(long userId,
+	                    String name,
+	                    String style,
+	                    int abv,
+	                    int blg,
+	                    int ibu,
+	                    long date,
+	                    int left,
+	                    int price,
+	                    String desc,
+	                    long regionId) {
+		regionRepository.findById(regionId).ifPresent(region -> beerRepository.save(new Beer(userId, name, style, abv, blg, ibu, date, left, price, desc, region)));
 	}
 
-	public Optional<Beer> getBeer(long id) {
-		return beerRepository.findById(id);
+	public Beer getBeer(long id) {
+		Optional<Beer> beer = beerRepository.findById(id);
+		return beer.orElse(null);
 	}
 
 	public List<Beer> getBeers(long userId) {
 		return beerRepository.findByUserId(userId);
+	}
+
+	public List<Beer> getBeersByStyle(String style) {
+		return beerRepository.findByStyle(style);
+	}
+
+	public List<Beer> getBeersByRegion(long regionId) {
+		return beerRepository.findByRegion_RegionId(regionId);
 	}
 }

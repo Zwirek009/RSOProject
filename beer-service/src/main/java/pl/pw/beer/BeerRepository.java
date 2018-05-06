@@ -9,8 +9,8 @@ public interface BeerRepository extends CrudRepository<Beer, Long> {
 
 	List<Beer> findByUserId(long userId);
 
-//	List<Beer> findByBeerType(BeerType beerType);
-//
-//	List<Beer> findByRegionContaining(long regionId);
+	List<Beer> findByStyle(String style);
+
+	List<Beer> findByRegion_RegionId(long regionId);
 
 }

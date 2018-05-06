@@ -14,15 +14,11 @@ public class Region {
 	@NotNull
 	private String city;
 
-	@NotNull
-	private String district;
-
 	public Region() {
 	}
 
-	public Region(@NotNull String city, @NotNull String district) {
+	public Region(@NotNull String city) {
 		this.city = city;
-		this.district = district;
 	}
 
 	public long getRegionId() {
@@ -41,11 +37,4 @@ public class Region {
 		this.city = city;
 	}
 
-	public String getDistrict() {
-		return district;
-	}
-
-	public void setDistrict(String district) {
-		this.district = district;
-	}
 }
