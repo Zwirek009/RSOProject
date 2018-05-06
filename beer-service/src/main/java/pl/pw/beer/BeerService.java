@@ -30,7 +30,7 @@ public class BeerService {
 		return beerRepository.findById(id);
 	}
 
-//	public List<Beer> getBeers(long userId) {
-//		beerRepository.
-//	}
+	public List<Beer> getBeers(long userId) {
+		return beerRepository.findByUserId(userId);
+	}
 }

@@ -29,6 +29,9 @@ public class Beer {
 	@JoinColumn(name = "regionId")
 	private Region region;
 
+	public Beer() {
+	}
+
 	public Beer(long userId, @NotNull String name, @NotNull String beerType, @NotNull String desc, @NotNull Region region) {
 		this.userId = userId;
 		this.name = name;
