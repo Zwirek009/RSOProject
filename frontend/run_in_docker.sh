@@ -1,5 +1,3 @@
-echo "instalation started ..."
+#!/bin/bash
 npm install
-
-echo "Running ..."
 npm start
