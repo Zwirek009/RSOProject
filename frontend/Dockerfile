@@ -4,4 +4,4 @@ WORKDIR /home/app
 
 EXPOSE 4200
 
-CMD ["npm", "start"]
+CMD ["sh", "run_in_docker.sh"]
