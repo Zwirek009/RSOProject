@@ -1,15 +1,10 @@
 const Koa = require('koa')
 const app = new Koa()
 const bodyParser = require('koa-bodyparser');
-var cors = require('koa-cors');
-
-const corsOptions = {
-  origin: true,
-  credentials: true
-};
+const cors = require('@koa/cors');
 
 app.use(bodyParser())
-app.use(cors(corsOptions))
+app.use(cors())
 
 
 const { authRequest } = require('./authRequest')

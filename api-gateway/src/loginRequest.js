@@ -10,6 +10,7 @@ const authHost = hosts.auth
 const LOGIN_URL = `http://${authHost}/sessions`
 
 exports.loginRequest = async (ctx, next) => {
+
   if (rules['/api/sessions'].POST != ctx.match) {
     await next()
     return;
