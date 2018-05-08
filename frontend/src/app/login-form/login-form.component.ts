@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login-form',
@@ -14,10 +15,23 @@ export class LoginFormComponent implements OnInit {
     Validators.email,
   ]);
 
+  passwordFormControl = new FormControl('', [
+    Validators.required,
+  ]);
+
   matcher = new MyErrorStateMatcher();
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
+  }
+
+  login() {
+    if (!this.emailFormControl.hasError('email') && !this.emailFormControl.hasError('required')
+        && !this.passwordFormControl.hasError('required')) {
+      console.log(this.emailFormControl.value);
+      console.log(this.passwordFormControl.value);
+      this.authService.login();
+    }
   }
 
 }

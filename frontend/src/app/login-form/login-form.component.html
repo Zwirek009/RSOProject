@@ -12,11 +12,14 @@
             </mat-form-field>
         
             <mat-form-field class="example-full-width">
-                <input type="password" matInput placeholder="Password">
+                <input type="password" matInput placeholder="Password" [formControl]="passwordFormControl" [errorStateMatcher]="matcher">
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                    Password is <strong>required</strong>
+                </mat-error>
             </mat-form-field>
         
             <div class="buttonHolder">
-                <button mat-button>Login</button>
+                <button mat-button (click)="login()">Login</button>
             </div>
         </form>
     </div>

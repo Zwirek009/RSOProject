@@ -24,15 +24,7 @@ export class AppComponent {
     if (this.isLogged) {
       return [''];
     } else {
-      return ['home'];
-    }
-  }
-
-  logIn() {
-    if (this.isLogged) {
-      this.isLogged = false;
-    } else {
-      this.isLogged = true;
+      return ['login'];
     }
   }
 
