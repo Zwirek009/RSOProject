@@ -13,6 +13,6 @@ class UserDataLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        userService.save(new User("user","user", "USER"));
+        userService.save(new User("user@gmail.com","user", "USER"));
     }
 }
