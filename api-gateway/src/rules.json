@@ -37,22 +37,7 @@
       "method": "POST"
     }
   },
-  "/api/test/some": {
-    "GET": {
-      "permissions": "*",
-      "service": "test",
-      "endpoint": "/test/some",
-      "method": "GET"
-    }
-  },
-  "/api/test/wtf": {
-    "POST": {
-      "permissions": "*",
-      "service": "test",
-      "endpoint": "/test/wtf",
-      "method": "POST"
-    }
-  },
+
   "/api/beer/add": {
     "POST": {
       "permissions": "USER",
