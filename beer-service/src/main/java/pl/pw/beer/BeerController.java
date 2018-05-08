@@ -21,30 +21,30 @@ class BeerController {
 		this.beerService = beerService;
 	}
 
-	@RequestMapping(value = "/get", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
-	public Beer getBeer(@RequestParam long id) throws IllegalArgumentException {
-		Beer beer = beerService.getBeer(id);
+	@RequestMapping(value = "/get/{beerId}", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
+	public Beer getBeer(@PathVariable("beerId") long beerId) throws IllegalArgumentException {
+		Beer beer = beerService.getBeer(beerId);
 		if (beer != null) {
 			return beer;
 		}
 		throw new IllegalArgumentException("error.beer");
 	}
 
-	//curl -v -X GET 'http://localhost:8082/beer/get_by_user' -d 'userId=1'
-	@RequestMapping(value = "/get_by_user", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
-	public List<Beer> getUserBeers(@RequestParam long userId) {
+	//curl -v -X GET 'http://localhost:8082/beer/get_by_user/1'
+	@RequestMapping(value = "/get_by_user/{userId}", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
+	public List<Beer> getUserBeers(@PathVariable(value = "userId") long userId) {
 		return beerService.getBeers(userId);
 	}
 
-	//curl -v -X GET 'http://localhost:8082/beer/get_by_style' -d 'style=style1'
-	@RequestMapping(value = "/get_by_style", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
-	public List<Beer> getStyleBeers(@RequestParam String style) {
+	//curl -v -X GET 'http://localhost:8082/beer/get_by_style/style1'
+	@RequestMapping(value = "/get_by_style/{style}", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
+	public List<Beer> getStyleBeers(@PathVariable("style") String style) {
 		return beerService.getBeersByStyle(style);
 	}
 
-	//curl -v -X GET 'http://localhost:8082/beer/get_by_region' -d 'regionId=1'
-	@RequestMapping(value = "/get_by_region", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
-	public List<Beer> getRegionBeers(@RequestParam long regionId) {
+	//curl -v -X GET 'http://localhost:8082/beer/get_by_region/1'
+	@RequestMapping(value = "/get_by_region/{regionId}", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
+	public List<Beer> getRegionBeers(@PathVariable("regionId") long regionId) {
 		return beerService.getBeersByRegion(regionId);
 	}
 
