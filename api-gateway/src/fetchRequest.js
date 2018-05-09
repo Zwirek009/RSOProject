@@ -39,8 +39,9 @@ function prepareData(ctx) {
 
 function prepareHeaders(ctx) {
   return {
-    // cookie: ctx.headers.cookie,
-    // userId: ctx.headers.userId,
+    // TODO: consider not including cookie in case of beer-service since it is not needed
+    cookie: ctx.headers.cookie,
+    userId: ctx.headers.userId,
     // 'Content-Type': 'application/x-www-form-urlencoded',
     'Content-Type': 'application/json'
   }
