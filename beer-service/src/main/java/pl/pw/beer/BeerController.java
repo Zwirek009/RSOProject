@@ -49,8 +49,8 @@ class BeerController {
 		return ResponseEntity.ok(beerService.getBeersByRegion(regionId));
 	}
 
-	// deprecated -> curl -v -X POST 'http://localhost:8082/beer/add' -d 'userId=1&name=name1&style=style1&abv=1&blg=2&ibu=3&date=4&left=5&price=6&desc=desc1&regionId=1'
-	@RequestMapping(value = "/add", method = RequestMethod.POST, produces = APPLICATION_JSON_VALUE)
+	// curl -v -H "Accept: application/json" -H "Content-type: application/json" -X POST 'http://localhost:8082/beer/add' -d '{"userId": 1, "name": "name1", "style": "style1", "abv": 1, "blg": 2, "ibu": 3, "date": 4, "left": 5, "price": 6, "desc": "desc1", "regionId": 1}’'
+	@RequestMapping(value = "/add", method = RequestMethod.POST, consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
 	public ResponseEntity addBeer(@RequestBody BeerDto beerDto) {
 		beerService.addBeer(beerDto.userId, beerDto.name, beerDto.style, beerDto.abv, beerDto.blg, beerDto.ibu, beerDto.date, beerDto.left, beerDto.price, beerDto.desc, beerDto.regionId);
 		return ResponseEntity.ok().build();
