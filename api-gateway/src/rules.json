@@ -46,35 +46,35 @@
       "method": "POST"
     }
   },
-  "/api/beer/get": {
+  "/api/beer/get/.*": {
     "GET": {
       "permissions": "*",
       "service": "beer",
-      "endpoint": "/beer/get",
+      "endpoint": "/beer/get/.*",
       "method": "GET"
     }
   },
-  "/api/beer/get_by_user": {
+  "/api/beer/get_by_user/.*": {
     "GET": {
       "permissions": "*",
       "service": "beer",
-      "endpoint": "/beer/get_by_user",
+      "endpoint": "/beer/get_by_user/.*",
       "method": "GET"
     }
   },
-  "/api/beer/get_by_style": {
+  "/api/beer/get_by_style/.*": {
     "GET": {
       "permissions": "*",
       "service": "beer",
-      "endpoint": "/beer/get_by_style",
+      "endpoint": "/beer/get_by_style/.*",
       "method": "GET"
     }
   },
-  "/api/beer/get_by_region": {
+  "/api/beer/get_by_region/.*": {
     "GET": {
       "permissions": "*",
       "service": "beer",
-      "endpoint": "/beer/get_by_region",
+      "endpoint": "/beer/get_by_region/.*",
       "method": "GET"
     }
   },
