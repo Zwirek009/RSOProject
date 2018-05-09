@@ -1,5 +1,5 @@
 const fetch = require('node-fetch')
-const querystring = require('query-string')
+// const querystring = require('query-string')
 
 const { restEndpoint } = require('./restEndpoint')
 const { hosts } = require('./properties')
@@ -30,7 +30,9 @@ function prepareData(ctx) {
   if (ctx.method != "GET" && ctx.method != "HEAD") {
     body = ctx.request.body
     body.userId = ctx.headers.userId
-    data.body = querystring.stringify(body)
+    // data.body = querystring.stringify(body)
+    data.body = JSON.stringify(ctx.request.body)
+
   }
   return data
 }
@@ -39,7 +41,7 @@ function prepareHeaders(ctx) {
   return {
     // cookie: ctx.headers.cookie,
     // userId: ctx.headers.userId,
-    'Content-Type': 'application/x-www-form-urlencoded',
-
+    // 'Content-Type': 'application/x-www-form-urlencoded',
+    'Content-Type': 'application/json'
   }
 }
