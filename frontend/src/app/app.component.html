@@ -1,5 +1,5 @@
 <mat-toolbar class="toolbar" color="primary">
-  <span [routerLink]="getLink()">BeerShare <i class="em em-beers"></i></span><div class="buttonHolder"><div *ngIf="logged()" class="userInfo" [routerLink]="['profile']"><i class="em em-construction_worker"></i>Test User</div></div><div class="login"><button [routerLink]="getLinkNot()" (click)="logIn()" mat-button>{{value()}}</button></div>
+  <span [routerLink]="getLink()">BeerShare <i class="em em-beers"></i></span><div class="buttonHolder"><div *ngIf="logged()" class="userInfo" [routerLink]="['profile']"><i class="em em-construction_worker"></i>{{getUser()}}</div></div><div class="login"><button [routerLink]="getLinkNot()" (click)="logIn()" mat-button>{{value()}}</button></div>
 </mat-toolbar>
 <router-outlet></router-outlet>
 

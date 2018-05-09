@@ -20,6 +20,7 @@ import { MatSelectModule} from '@angular/material/select';
 import { ProfileComponent } from './profile/profile.component';
 import { BeerComponent } from './beer/beer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
 
 const appRoutes: Routes = [
   { path: '', component: MainPageComponent },
@@ -55,7 +56,7 @@ const appRoutes: Routes = [
     MatTableModule,
     MatSelectModule,
   ],
-  providers: [{provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}],
+  providers: [{provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

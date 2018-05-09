@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 import { AuthService } from '../auth.service';
+import { CookieService } from 'ngx-cookie-service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login-form',
@@ -20,7 +22,7 @@ export class LoginFormComponent implements OnInit {
   ]);
 
   matcher = new MyErrorStateMatcher();
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private cookieService: CookieService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -30,7 +32,11 @@ export class LoginFormComponent implements OnInit {
         && !this.passwordFormControl.hasError('required')) {
       console.log(this.emailFormControl.value);
       console.log(this.passwordFormControl.value);
-      this.authService.login();
+      // this.authService.makeLogin().subscribe();
+      // this.authService.getInfo();
+      localStorage.setItem('logged', 'true');
+      localStorage.setItem('user', this.emailFormControl.value);
+      this.router.navigateByUrl('/home');
     }
   }
 

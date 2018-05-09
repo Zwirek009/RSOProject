@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +9,20 @@ import { Component } from '@angular/core';
 export class AppComponent {
   isLogged = false;
 
+  constructor(private router: Router) {
+
+  }
+
   logged(): boolean {
-    return this.isLogged;
+    if (localStorage.getItem('logged') === 'true') {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   getLink(): [string] {
-    if (this.isLogged) {
+    if (localStorage.getItem('logged') === 'true')  {
       return ['home'];
     } else {
       return [''];
@@ -21,18 +30,29 @@ export class AppComponent {
   }
 
   getLinkNot(): [string] {
-    if (this.isLogged) {
+    if (localStorage.getItem('logged') === 'true')  {
       return [''];
     } else {
       return ['login'];
     }
   }
 
+  logIn() {
+    if (localStorage.getItem('logged') === 'true') {
+      localStorage.setItem('logged', 'false');
+      this.router.navigateByUrl('');
+    }
+  }
+
   value(): string {
-    if (this.isLogged) {
+    if (localStorage.getItem('logged') === 'true')  {
       return 'Logout';
     } else {
       return 'Login';
     }
+  }
+
+  getUser(): string {
+    return localStorage.getItem('user');
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import * as config from './config';
 
 @Injectable({
@@ -11,22 +11,33 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login () {
-    const body = new FormData();
-    body.set('username', 'user');
-    body.set('password', 'user');
-    return this.http.post('http://localhost:3000/api/sessions', body)
-      .subscribe(
-        res => {
-          console.log(res);
-        },
-        err => {
-          console.log('Error occured', err);
-        }
-      );
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    return this.http.post('http://localhost:3000/api/sessions', {
+      username: 'user@gmail.com',
+      password: 'user'
+    }, {'headers': headers}).subscribe();
   }
 
+  makeLogin (): Observable<any> {
+    const enco: any = new HttpHeaders()
+        .set('Content-Type', 'application/x-www-form-urlencoded');
+
+    const body: any = new HttpParams()
+    .set('username', 'user@gmail.com')
+    .set('password', 'user');
+    return this.http.post('http://localhost:3000/api/sessions',
+     body.toString(),
+     {
+       headers: enco, withCredentials: true
+     }
+   );
+}
+
   getInfo() {
-    this.http.get('').subscribe(data => {
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    this.http.get('http://localhost:3000/api/users/current', { withCredentials: true }).subscribe(data => {
       console.log(data);
     });
   }
