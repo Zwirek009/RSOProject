@@ -4,7 +4,9 @@ const bodyParser = require('koa-bodyparser');
 const cors = require('@koa/cors');
 
 app.use(bodyParser())
-app.use(cors())
+app.use(cors({
+  credentials: true
+}))
 
 
 const { authRequest } = require('./authRequest')
