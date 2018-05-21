@@ -26,3 +26,6 @@ hs_err_pid*
 /frontend/dist
 /frontend/out-tsc
 /frontend/tmp
+
+*.DS_Store
+*.vscode*
