@@ -10,34 +10,37 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  login () {
+  login() {
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    headers.append('X-Requested-With', 'XMLHttpRequest');
     return this.http.post('http://localhost:3000/api/sessions', {
       username: 'user@gmail.com',
       password: 'user'
-    }, {'headers': headers}).subscribe();
+    }, { 'headers': headers }).subscribe();
   }
 
-  makeLogin (): Observable<any> {
+  makeLogin(): Observable<any> {
     const enco: any = new HttpHeaders()
-        .set('Content-Type', 'application/x-www-form-urlencoded');
+      .set('Content-Type', 'application/x-www-form-urlencoded')
+      .set('X-Requested-With', 'XMLHttpRequest');
 
     const body: any = new HttpParams()
-    .set('username', 'user@gmail.com')
-    .set('password', 'user');
+      .set('username', 'user@gmail.com')
+      .set('password', 'user');
     return this.http.post('http://localhost:3000/api/sessions',
-     body.toString(),
-     {
-       headers: enco, withCredentials: true
-     }
-   );
-}
+      body.toString(),
+      {
+        headers: enco, withCredentials: true
+      }
+    );
+  }
 
   getInfo() {
-    const headers = new HttpHeaders();
-    headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    this.http.get('http://localhost:3000/api/users/current', { withCredentials: true }).subscribe(data => {
+    const enco: any = new HttpHeaders()
+      .set('Content-Type', 'application/x-www-form-urlencoded')
+      .set('X-Requested-With', 'XMLHttpRequest');
+    this.http.get('http://localhost:3000/api/users/current', { headers: enco, withCredentials: true }).subscribe(data => {
       console.log(data);
     });
   }

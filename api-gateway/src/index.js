@@ -9,12 +9,14 @@ app.use(cors({
 }))
 
 
+const { csrfFilter } = require('./csrfFilter')
 const { authRequest } = require('./authRequest')
 const { matchRequest } = require('./matchRequest')
 const { loginRequest } = require('./loginRequest')
 const { fetchRequest } = require('./fetchRequest')
 
 app
+  .use(csrfFilter)
   .use(matchRequest)
   .use(authRequest)
   .use(loginRequest)
