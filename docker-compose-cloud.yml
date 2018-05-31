@@ -23,5 +23,7 @@ services:
       - "6379:6379"
   frontend:
     image: zwirek009/rsoproject_frontend
+    deploy:
+      replicas: 5
     ports:
       - "4200:4200"
