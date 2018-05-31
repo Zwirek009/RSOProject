@@ -1,0 +1,23 @@
+TO START THE SWARM:
+   On leader node (RSO-Host1):
+      1. Run: "docker swarm init --advertise-addr 10.0.0.4:2377 --listen-addr 10.0.0.4:2377"
+      2. Run: "docker swarm join-token manager"
+      3. Run: "docker swarm join-token worker"
+
+   On every manager node:
+      4. Use the command returned in step 2. to add swarm on every manager node
+
+   On every worker node:
+      5. Use the command returned in step 3. to add swarm on every manager node
+
+   ONLY on leader node (RSO-Host1):
+      6. Run: "docker stack deploy -c docker-compose-swarm.yml rso-swarm".
+   
+
+REMEMBER:
+   - (to ensure) use step 6. to update the swarm, pulling the changes in container's repo
+   - calling service endpoint on any node in the swarm redirects to an active service on one of the nodes  
+   - "docker service ls" to see list of all services in the swarm (from manager/leader node)
+   - "docker service ps <service_name>" to see where instances of the service are and their status (from manager/leader node)
+   - Optimal 3-5 manager nodes
+   - Every manager node is a worker node at the same time
