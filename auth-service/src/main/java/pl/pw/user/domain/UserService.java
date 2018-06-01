@@ -20,6 +20,10 @@ public class UserService {
 
     }
 
+    public void delete(User user) {
+        userRepository.deleteById(user.getId());
+    }
+
     private User encodePassword(User user) {
         String password = passwordEncoder.encode(user.getPassword());
         return new User(user.getName(), password, user.getRole());

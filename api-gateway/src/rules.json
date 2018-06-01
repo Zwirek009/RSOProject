@@ -19,6 +19,12 @@
       "service": "auth",
       "endpoint": "/users/current",
       "method": "GET"
+    },
+    "DELETE": {
+      "permissions": "USER",
+      "service": "auth",
+      "endpoint": "/users/current",
+      "method": "DELETE"
     }
   },
   "/api/users/.*": {

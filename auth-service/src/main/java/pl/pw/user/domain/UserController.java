@@ -2,6 +2,7 @@ package pl.pw.user.domain;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import pl.pw.user.domain.UserFactory;
 import pl.pw.user.domain.UserService;
@@ -24,5 +25,11 @@ class UserController {
     @GetMapping("/current")
     public ResponseEntity<UserOutDto> getCurrentUser() {
         return ResponseEntity.ok(userService.getCurrentUser().map(UserFactory::createUserDto).get());
+    }
+
+    @DeleteMapping("/current")
+    public ResponseEntity deleteCurrentUser() {
+        userService.getCurrentUser().ifPresent(userService::delete);
+        return ResponseEntity.ok().build();
     }
 }
