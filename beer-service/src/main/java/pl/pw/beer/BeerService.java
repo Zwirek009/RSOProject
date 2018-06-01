@@ -49,4 +49,13 @@ public class BeerService {
 	public List<Beer> getBeersByRegion(long regionId) {
 		return beerRepository.findByRegion_RegionId(regionId);
 	}
+
+	public List<Beer> getYoungerBeers(long dateLowLimit) {
+		return beerRepository.findByDateIsGreaterThanEqual(dateLowLimit);
+	}
+
+	public List<Beer> getOlderBeers(long dateHighLimit) {
+		return beerRepository.findByDateIsLessThanEqual(dateHighLimit);
+	}
+
 }

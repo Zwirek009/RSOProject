@@ -91,5 +91,21 @@
       "endpoint": "/region/get",
       "method": "GET"
     }
+  },
+  "/api/beer/get_older_beer/.*": {
+    "GET": {
+      "permissions": "*",
+      "service": "beer",
+      "endpoint": "/beer/get_older_beer/.*",
+      "method": "GET"
+    }
+  },
+  "/api/beer/get_younger_beer/.*": {
+    "GET": {
+      "permissions": "*",
+      "service": "beer",
+      "endpoint": "/beer/get_younger_beer/.*",
+      "method": "GET"
+    }
   }
 }

@@ -13,4 +13,8 @@ public interface BeerRepository extends CrudRepository<Beer, Long> {
 
 	List<Beer> findByRegion_RegionId(long regionId);
 
+	List<Beer> findByDateIsGreaterThanEqual(long dateLowLimit);
+
+	List<Beer> findByDateIsLessThanEqual(long dateHighLimit);
+
 }
