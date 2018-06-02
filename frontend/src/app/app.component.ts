@@ -53,6 +53,7 @@ export class AppComponent {
   }
 
   getUser(): string {
-    return localStorage.getItem('user');
+    const val = JSON.parse(localStorage.getItem('user'));
+    return val.name;
   }
 }

@@ -1,0 +1,47 @@
+.details {
+    width: 34%;
+    float: left;
+    font-family: 'Roboto';
+    margin: 3%;
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+}
+
+.add {
+    width: 54%;
+    float: left;
+    margin: 3%;
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+}
+
+.example-full-width {
+    width: 60%;
+    margin-left: 10%;
+    margin-top: 3%;
+}
+
+.button {
+    width: 30%;
+    margin-left: 20%;
+    margin-bottom: 5%;
+    background-color: rgb(65, 131, 65);
+}
+
+.info {
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+.buttons {
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-bottom: 10%;
+}
+
+.remove {
+    background-color: rgb(255, 111, 111);
+}
+
+.reset {
+    background-color: rgb(253, 253, 120);
+    margin-right: 2%;
+}

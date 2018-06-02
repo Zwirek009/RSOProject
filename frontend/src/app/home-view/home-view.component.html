@@ -3,14 +3,14 @@
       <div class="filters">
           <mat-form-field>
               <mat-select placeholder="City">
-                <mat-option *ngFor="let city of cities">
-                  {{ city }}
+                <mat-option *ngFor="let city of beerService.regions" [value]="city.city">
+                  {{ city.city }}
                 </mat-option>
               </mat-select>
             </mat-form-field>
             <mat-form-field>
               <mat-select placeholder="Style">
-                  <mat-option *ngFor="let beer of dataSource">
+                  <mat-option *ngFor="let beer of beerService.beers" [value]="beer.style">
                     {{ beer.style }}
                   </mat-option>
                 </mat-select>
@@ -23,7 +23,7 @@
   <div class="rightPanel">
     <div class="list">
         <div class="example-container">
-            <table mat-table #table [dataSource]="dataSource">
+            <table mat-table #table [dataSource]="beerService.beers">
                   <ng-container matColumnDef="name">
                     <th mat-header-cell *matHeaderCellDef> Name </th>
                     <td (click)="check(element.name)" mat-cell *matCellDef="let element"> {{element.name}} </td>
