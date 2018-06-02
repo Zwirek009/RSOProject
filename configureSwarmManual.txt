@@ -28,3 +28,5 @@ REMEMBER:
    - newly added/back to life nodes will NOT automatically be filled with services instances
    - "docker service update --image <image_name> --update-parallelism <number_of_instances_to_update_at_once> 
      --update-delay <num_of_seconds_between_each_update_step>s <service_name>
+   - add -f or --force flag to above to restart them (problems may occur) or "docker service scale (...)" and spread across newly added/restarted nodes
+   - if swarm fails, run "docker swarm init --force-new-cluster (...)" from leader node to start a new swarm
