@@ -16,7 +16,7 @@ TO START THE SWARM:
    
 TO STOP THE SWARM:
    On leader/manager node:
-      1. Run: "docker stack rm rso-stack
+      1. Run: "docker stack rm rso-stack"
 
 REMEMBER:
    - calling service endpoint on any node in the swarm redirects to an active service on one of the nodes  
@@ -24,3 +24,7 @@ REMEMBER:
    - "docker service ps <service_name>" to see where instances of the service are and their status (from manager/leader node)
    - Optimal 3-5 manager nodes
    - Every manager node is a worker node at the same time
+   - "docker service scale <service_name>=<number_of_desired_replicas>" will scale the system
+   - newly added/back to life nodes will NOT automatically be filled with services instances
+   - "docker service update --image <image_name> --update-parallelism <number_of_instances_to_update_at_once> 
+     --update-delay <num_of_seconds_between_each_update_step>s <service_name>
