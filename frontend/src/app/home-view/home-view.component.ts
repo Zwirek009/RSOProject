@@ -1,7 +1,7 @@
 declare var require: any;
 import { Component, OnInit } from '@angular/core';
-const data = require('../../assets/beer_mock.json');
 import {Router} from '@angular/router';
+import { BeerService } from '../beer.service';
 
 @Component({
   selector: 'app-home-view',
@@ -10,14 +10,15 @@ import {Router} from '@angular/router';
 })
 export class HomeViewComponent implements OnInit {
   displayedColumns = ['name', 'style', 'abv', 'blg', 'ibu', 'date', 'left', 'price'];
-  dataSource = ELEMENT_DATA;
-  cities = ['Warsaw', 'Wroclaw', 'Gdansk', 'Poznan', 'Lodz'];
+  cities = [];
   router: Router;
-  constructor(router: Router) {
+  constructor(router: Router, private beerService: BeerService) {
     this.router = router;
   }
 
   ngOnInit() {
+    this.beerService.getRegions();
+    this.beerService.getAllBeers('1');
   }
 
   check(value: string) {
@@ -26,21 +27,3 @@ export class HomeViewComponent implements OnInit {
   }
 
 }
-
-export class TableBasicExample {
-  displayedColumns = ['name', 'style', 'abv', 'blg', 'ibu', 'date', 'left', 'price'];
-  dataSource = ELEMENT_DATA;
-}
-
-export interface Element {
-  name: string;
-  style: string;
-  abv: number;
-  blg: number;
-  ibu: number;
-  date: string;
-  left: number;
-  price: number;
-}
-
-const ELEMENT_DATA: Element[] = data;

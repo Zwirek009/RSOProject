@@ -1,0 +1,32 @@
+TO INIT THE SWARM:
+   On leader node (RSO-Host1):
+      1. Run: "docker swarm init --advertise-addr 10.0.0.4:2377 --listen-addr 10.0.0.4:2377"
+      2. Run: "docker swarm join-token manager"
+      3. Run: "docker swarm join-token worker"
+
+   On every manager node:
+      4. Use the command returned in step 2. to add swarm on every manager node
+
+   On every worker node:
+      5. Use the command returned in step 3. to add swarm on every manager node
+
+TO START THE SWARM:
+   ONLY on leader node (RSO-Host1):
+      1. Run: "docker stack deploy -c docker-compose-swarm.yml rso-swarm"
+   
+TO STOP THE SWARM:
+   On leader/manager node:
+      1. Run: "docker stack rm rso-stack"
+
+REMEMBER:
+   - calling service endpoint on any node in the swarm redirects to an active service on one of the nodes  
+   - "docker service ls" to see list of all services in the swarm (from manager/leader node)
+   - "docker service ps <service_name>" to see where instances of the service are and their status (from manager/leader node)
+   - Optimal 3-5 manager nodes
+   - Every manager node is a worker node at the same time
+   - "docker service scale <service_name>=<number_of_desired_replicas>" will scale the system
+   - newly added/back to life nodes will NOT automatically be filled with services instances
+   - "docker service update --image <image_name> --update-parallelism <number_of_instances_to_update_at_once> 
+     --update-delay <num_of_seconds_between_each_update_step>s <service_name>
+   - add -f or --force flag to above to restart them (problems may occur) or "docker service scale (...)" and spread across newly added/restarted nodes
+   - if swarm fails, run "docker swarm init --force-new-cluster (...)" from leader node to start a new swarm

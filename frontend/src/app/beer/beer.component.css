@@ -1,0 +1,23 @@
+.details {
+    width: 34%;
+    float: left;
+    font-family: 'Roboto';
+    margin: 3%;
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+}
+
+.info {
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+.buttons {
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-bottom: 10%;
+}
+
+.button {
+    background-color: rgb(48, 124, 48);
+    margin-right: 2%;
+}

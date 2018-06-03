@@ -30,16 +30,19 @@ export class LoginFormComponent implements OnInit {
   login() {
     if (!this.emailFormControl.hasError('email') && !this.emailFormControl.hasError('required')
         && !this.passwordFormControl.hasError('required')) {
-      console.log(this.emailFormControl.value);
-      console.log(this.passwordFormControl.value);
-       this.authService.makeLogin().subscribe();
-       this.authService.getInfo();
-      localStorage.setItem('logged', 'true');
-      localStorage.setItem('user', this.emailFormControl.value);
-      this.router.navigateByUrl('/home');
+      this.authService.makeLogin(this.emailFormControl.value, this.passwordFormControl.value).subscribe(
+        (value) => {
+          console.log(value);
+        },
+        (err) => {
+          if (err.status === 200) {
+            this.authService.getInfo();
+            this.router.navigateByUrl('/home');
+          }
+        }
+      );
     }
   }
-
 }
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {

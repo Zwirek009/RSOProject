@@ -2,7 +2,6 @@ version: '3'
 services:
   api-gateway:
     image: zwirek009/rsoproject_api-gateway
-    build: ./api-gateway
     environment:
       authService: auth-service
       beerService: beer-service
@@ -10,14 +9,12 @@ services:
       - "3000:3000"
   auth-service:
     image: zwirek009/rsoproject_auth-service
-    build: ./auth-service
     ports:
       - "8080:8080"
     links:
       - redis:redis
   beer-service:
     image: zwirek009/rsoproject_beer-service
-    build: ./beer-service
     ports:
       - "8082:8082"
   redis:
@@ -26,6 +23,7 @@ services:
       - "6379:6379"
   frontend:
     image: zwirek009/rsoproject_frontend
-    build: frontend
+    deploy:
+      replicas: 10
     ports:
       - "4200:4200"
