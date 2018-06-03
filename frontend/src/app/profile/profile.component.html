@@ -1,3 +1,38 @@
-<p>
-  profile works!
-</p>
+<div class="container"> 
+  <div class="details">
+    <div class="frame">
+      <div class="info">Email: {{getUser()}}</div>
+      <div class="buttons">
+      <button mat-button (click)="get()" class="reset">Reset Password</button>
+      <button mat-button (click)="getRegion()" class="remove">Remove Account</button>
+      </div>
+    </div>
+  </div>
+  <div class="add">
+    <mat-form-field class="example-full-width input">
+      <input matInput placeholder="Name" [(ngModel)]="beer.name">
+    </mat-form-field>
+    <mat-form-field class="example-full-width input">
+      <input matInput placeholder="Style" [(ngModel)]="beer.style">
+    </mat-form-field>
+    <mat-form-field class="example-full-width input">
+      <input matInput placeholder="ABV" [(ngModel)]="beer.abv">
+    </mat-form-field>
+    <mat-form-field class="example-full-width input">
+      <input matInput placeholder="BLG" [(ngModel)]="beer.blg">
+    </mat-form-field>
+    <mat-form-field class="example-full-width input">
+      <input matInput placeholder="IBU" [(ngModel)]="beer.ibu">
+    </mat-form-field>
+    <mat-form-field class="example-full-width input">
+      <input matInput placeholder="Quantity" [(ngModel)]="beer.left">
+    </mat-form-field>
+    <mat-form-field class="example-full-width input">
+      <input matInput placeholder="Price" [(ngModel)]="beer.price">
+    </mat-form-field>
+    <mat-form-field class="example-full-width input">
+      <input matInput placeholder="Description" [(ngModel)]="beer.desc">
+    </mat-form-field>
+    <button mat-button class="button" (click)="add()">Add beer</button>
+  </div>
+</div>

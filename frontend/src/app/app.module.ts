@@ -21,6 +21,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { BeerComponent } from './beer/beer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 const appRoutes: Routes = [
   { path: '', component: MainPageComponent },
@@ -48,6 +49,7 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     MatToolbarModule,
+    MatSnackBarModule,
     MatButtonModule,
     MatInputModule,
     BrowserAnimationsModule,
