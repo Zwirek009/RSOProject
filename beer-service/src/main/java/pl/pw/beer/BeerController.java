@@ -70,6 +70,7 @@ class BeerController {
 	//  FIND
 	// =================================================================================================================
 
+	// curl -v -X GET 'http://localhost:8082/beer/find?userId=1&style=style1'
 	@RequestMapping(value = "/find", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Beer>> get(@RequestParam(value = "userId", required = false) Long userId,
 	                                      @RequestParam(value = "regionId", required = false) Long regionId,
@@ -87,6 +88,13 @@ class BeerController {
 	@RequestMapping(value = "/add", method = RequestMethod.POST, consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
 	public ResponseEntity addBeer(@RequestBody BeerDto beerDto) {
 		beerService.addBeer(beerDto.userId, beerDto.name, beerDto.style, beerDto.abv, beerDto.blg, beerDto.ibu, beerDto.date, beerDto.left, beerDto.price, beerDto.desc, beerDto.regionId);
+		return ResponseEntity.ok().build();
+	}
+
+	// curl -v -X DELETE 'http://localhost:8082/beer/remove/1'
+	@RequestMapping(value = "/remove/{beerId}", method = RequestMethod.DELETE, produces = APPLICATION_JSON_VALUE)
+	public ResponseEntity removeBeer(@PathVariable("beerId") long beerId) {
+		beerService.remove(beerId);
 		return ResponseEntity.ok().build();
 	}
 

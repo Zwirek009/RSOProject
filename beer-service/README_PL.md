@@ -1,6 +1,6 @@
 **Beer Service**
  -
- Głównym zadaniem _Beer service_ jest przechowywanie oraz udostępnianie danych dotyczących piw dodawanych przez użytkowników systemu.
+ Głównym zadaniem _Beer service_ jest przechowywanie oraz udostępnianie danych dotyczących piw dodawanych przez użytkowników systemu (CRUD).
  Serwis powstał przy platformy programistycznej SpringBoot opartej na technologii Java.
  
  _Beer service_ składa się z dwóch pakietów - `beer` i `region`.
@@ -16,7 +16,8 @@ Adresy udostępnione przez BeerController:
 * `/beer/get_by_user/1` - zwraca listę piw użytkownika o userId (w przykładzie `userId=1`)
 * `/beer/get_by_style/ale` - zwraca listę piw o zadanym typie piwa (w przykładzie `typ=ale`)
 * `/beer/get_by_region/1` - zwraca listę piw udostępnionych w ramach zadanego regionId (w przykładzie `regionId=1`)
-
+* `/beer/find` - zwraca listę piw spełniajacych podane wymagania
+* `/beer/remove/1` - usuwa piwo o zadanym id z serwisu (w przykładzie `beerId=1`)
 
 Adresy udostępnione przez RegionController:
 * `/region/get` - zwarca listę regionów
@@ -31,6 +32,9 @@ Przykładowy scenariusz testowy (do wykonania używając programu curl):
 * `curl -v -X GET 'http://localhost:8082/beer/get_by_user/1'`
 * `curl -v -X GET 'http://localhost:8082/beer/get_by_style/1'`
 * `curl -v -X GET 'http://localhost:8082/beer/get_by_region/1'`
+* `curl -v -X GET 'http://localhost:8082/beer/find?userId=1&style=style1'`
+* `curl -v -X DELETE 'http://localhost:8082/beer/remove/1'`
+
 - do wersji przed zmianami `011d56b`:
 * `curl -v -X POST 'http://localhost:8082/beer/add' -d 'userId=1&name=name1&style=style1&abv=1&blg=2&ibu=3&date=4&left=5&price=6&desc=desc1&regionId=1'`
 * `curl -v -X GET 'http://localhost:8082/beer/get_by_user' -d 'userId=1'`
