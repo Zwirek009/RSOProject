@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
@@ -63,6 +64,19 @@ class BeerController {
 	@RequestMapping(value = "/get_younger_beer/{date}", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Beer>> getBeerYoungerThan(@PathVariable("date") long dateLowLimit) {
 		return ResponseEntity.ok(beerService.getYoungerBeers(dateLowLimit));
+	}
+
+	// =================================================================================================================
+	//  FIND
+	// =================================================================================================================
+
+	@RequestMapping(value = "/find", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<Beer>> get(@RequestParam(value = "userId", required = false) Long userId,
+	                                      @RequestParam(value = "regionId", required = false) Long regionId,
+	                                      @RequestParam(value = "style", required = false) String style,
+	                                      @RequestParam(value = "dateFrom", required = false) Long dateFrom,
+	                                      @RequestParam(value = "dateTo", required = false) Long dateTo) {
+		return ResponseEntity.ok(beerService.getBeers(userId, regionId, style, dateFrom, dateTo));
 	}
 
 	// =================================================================================================================
