@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from './auth.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +11,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   isLogged = false;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private authService: AuthService, private cookieService: CookieService) {
 
   }
 
@@ -40,6 +42,8 @@ export class AppComponent {
   logIn() {
     if (localStorage.getItem('logged') === 'true') {
       localStorage.setItem('logged', 'false');
+      localStorage.setItem('user', undefined);
+      this.authService.logout();
       this.router.navigateByUrl('');
     }
   }

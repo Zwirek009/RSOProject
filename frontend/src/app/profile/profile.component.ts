@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BeerService, Filter } from '../beer.service';
 import {MatSnackBar} from '@angular/material';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-profile',
@@ -19,10 +20,12 @@ export class ProfileComponent implements OnInit {
     price: '',
     desc: '',
     region: '1',
-    date: '',
+    date: '0',
   };
 
-  constructor(private beerService: BeerService, public snackBar: MatSnackBar) { }
+  dateBasic;
+
+  constructor(private beerService: BeerService, public snackBar: MatSnackBar, public authService: AuthService) { }
 
   ngOnInit() {
   }
@@ -34,6 +37,9 @@ export class ProfileComponent implements OnInit {
   }
 
   add() {
+    // if (this.dateBasic !== undefined) {
+    //   this.beer.date = this.dateBasic.getTime().toString();
+    // }
     if (this.beer.name === '' || this.beer.style === '') {
       this.openSnackBar('Error', 'Name and Style cannot be empty');
       return;
@@ -46,6 +52,10 @@ export class ProfileComponent implements OnInit {
       (err) => {
         this.openSnackBar('Error', err.toString());
       });
+  }
+
+  remove() {
+    this.authService.remove();
   }
 
   getUser(): string {
@@ -63,5 +73,6 @@ export class ProfileComponent implements OnInit {
     this.beer.ibu = '';
     this.beer.left = '';
     this.beer.price = '';
+    this.dateBasic = undefined;
   }
 }

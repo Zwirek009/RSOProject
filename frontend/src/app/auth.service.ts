@@ -36,4 +36,39 @@ export class AuthService {
       localStorage.setItem('user', String(data));
     });
   }
+
+  register(user, pass: string) {
+    const enco: any = new HttpHeaders()
+      .set('Content-Type', 'application/x-www-form-urlencoded')
+      .set('X-Requested-With', 'XMLHttpRequest');
+
+    const body: any = new HttpParams()
+      .set('name', user)
+      .set('password', pass)
+      .set('role', 'USER');
+    return this.http.post('http://localhost:3000/api/users',
+      body.toString(),
+      {
+        headers: enco
+      }
+    );
+  }
+
+  remove() {
+    const enco: any = new HttpHeaders()
+      .set('Content-Type', 'application/x-www-form-urlencoded')
+      .set('X-Requested-With', 'XMLHttpRequest');
+    this.http.delete('http://localhost:3000/api/users/current', { headers: enco, withCredentials: true }).subscribe(data => {
+      console.log(data);
+    });
+  }
+
+  logout() {
+    const enco: any = new HttpHeaders()
+      .set('Content-Type', 'application/x-www-form-urlencoded')
+      .set('X-Requested-With', 'XMLHttpRequest');
+      this.http.delete('http://localhost:3000/api/sessions', { headers: enco, withCredentials: true }).subscribe(data => {
+      console.log(data);
+    });
+  }
 }

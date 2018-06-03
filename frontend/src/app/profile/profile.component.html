@@ -26,6 +26,11 @@
     <mat-form-field class="example-full-width input">
       <input matInput placeholder="Quantity" [(ngModel)]="beer.left">
     </mat-form-field>
+    <mat-form-field class="date">
+      <input matInput [matDatepicker]="date" placeholder="Date of Production" [(ngModel)]="dateBasic">
+      <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+      <mat-datepicker #date></mat-datepicker>
+    </mat-form-field>
     <mat-form-field class="example-full-width input">
       <input matInput placeholder="Price" [(ngModel)]="beer.price">
     </mat-form-field>

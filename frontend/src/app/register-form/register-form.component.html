@@ -1,10 +1,10 @@
 <form class="example-form">
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="First Name">
+      <input matInput placeholder="First Name" [(ngModel)]="name" name="something">
     </mat-form-field>
   
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Last Name">
+      <input matInput placeholder="Last Name" [(ngModel)]="last" name="something">
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
@@ -18,11 +18,14 @@
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-        <input type="password" matInput placeholder="Password">
+        <input type="password" matInput placeholder="Password" [formControl]="passwordFormControl" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="passwordFormControl.hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
     </mat-form-field>
 
     <div class="buttonHolder">
-        <button mat-button>Register</button>
+        <button mat-button (click)="register()">Register</button>
     </div>
 
 </form>
