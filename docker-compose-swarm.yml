@@ -1,29 +1,19 @@
 version: '3'
 services:
   api-gateway:
-    image: zwirek009/rsoproject_api-gateway
+    image: zwirek009/rsoproject_api-gateway:latest
     environment:
       authService: auth-service
       beerService: beer-service
     ports:
       - "3000:3000"
   auth-service:
-    image: zwirek009/rsoproject_auth-service
-    ports:
-      - "8080:8080"
-    links:
-      - redis:redis
+    image: zwirek009/rsoproject_auth-service:latest
   beer-service:
-    image: zwirek009/rsoproject_beer-service
-    ports:
-      - "8082:8082"
+    image: zwirek009/rsoproject_beer-service:latest
   redis:
     image: "redis:alpine"
-    ports:
-      - "6379:6379"
   frontend:
-    image: zwirek009/rsoproject_frontend
+    image: zwirek009/rsoproject_frontend:latest
     deploy:
       replicas: 10
-    ports:
-      - "4200:4200"

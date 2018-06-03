@@ -115,5 +115,13 @@
       "endpoint": "/beer/find",
       "method": "GET"
     }
+  },
+  "/api/beer/remove/.*": {
+    "DELETE": {
+      "permissions": "*",
+      "service": "auth",
+      "endpoint": "/beer/remove/.*",
+      "method": "DELETE"
+    }
   }
 }

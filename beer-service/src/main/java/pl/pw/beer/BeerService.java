@@ -109,55 +109,10 @@ public class BeerService {
 		}
 	}
 
-//	public List<Beer> getBeers(Optional<Long> userId, Optional<Long> regionId, Optional<String> style, Optional<Long> dateFrom, Optional<Long> dateTo) {
-//
-//		long from, to;
-//
-//		if (dateFrom.isPresent()) {
-//			from = dateFrom.get();
-//		} else {
-//			from = 0L;
-//		}
-//
-//		if(dateTo.isPresent()) {
-//			to = dateTo.get();
-//		} else {
-//			to = Calendar.getInstance().getTimeInMillis();
-//		}
-//
-//		if(userId.isPresent()) {
-//
-//			if(regionId.isPresent()) {
-//
-//				if(style.isPresent()) {
-//					return beerRepository.findByUserIdAndStyleAndRegion_RegionIdAndDateBetween(userId.get(), style.get(), regionId.get(), from, to);
-//				} else {
-//					return beerRepository.findByUserIdAndRegion_RegionIdAndDateBetween(userId.get(), regionId.get(), from, to);
-//				}
-//
-//			} else {
-//
-//				if(style.isPresent()) {
-//					return beerRepository.findByUserIdAndStyleAndDateBetween(userId.get(), style.get(), from, to);
-//				} else {
-//					return beerRepository.findByUserIdAndDateBetween(userId.get(), from, to);
-//				}
-//
-//			}
-//
-//		} else if (regionId.isPresent()) {
-//
-//			if(style.isPresent()) {
-//				return beerRepository.findByRegion_regionIdAndStyleAndDateBetween(regionId.get(), style.get(), from, to);
-//			} else {
-//				return beerRepository.findByRegion_RegionIdAndDateBetween(regionId.get(), from, to);
-//			}
-//
-//		} else if(style.isPresent()) {
-//			return beerRepository.findByStyleAndDateBetween(style.get(), from, to);
-//		} else {
-//			return beerRepository.findByDateBetween(from, to);
-//		}
-//	}
+	public void remove(long beerId) {
+		if(beerRepository.existsById(beerId)) {
+			beerRepository.deleteById(beerId);
+		}
+	}
 
 }
