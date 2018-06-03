@@ -10,9 +10,13 @@ TO INIT THE SWARM:
    On every worker node:
       5. Use the command returned in step 3. to add swarm on every manager node
 
-TO START THE SWARM:
+TO PUSH NEW CHANGES TO DOCKER HUB:
+   On local computer (dev machine):
+     1. Run: "bash dev-build-and-push-images-to-registry.sh"
+
+TO START/UPDATE THE SWARM FROM DOCKER HUB:
    ONLY on leader node (RSO-Host1):
-      1. Run: "docker stack deploy -c docker-compose-swarm.yml rso-swarm"
+      1. Run: "bash swarm-pull-and-run.sh"
    
 TO STOP THE SWARM:
    On leader/manager node:

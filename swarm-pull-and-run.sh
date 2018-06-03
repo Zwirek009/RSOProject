@@ -1,2 +1,2 @@
 #!/bin/bash
-docker stack deploy -c docker-compose-swarm.yml rso-swarm
+docker stack deploy -c docker-compose-swarm.yml --prune rso-swarm
