@@ -1,3 +1,3 @@
 #!/bin/bash
 docker stack rm rso-stack
-docker-compose -f docker-compose-swarm.yml up -d 
+docker stack deploy -c docker-compose-swarm.yml up -d 
