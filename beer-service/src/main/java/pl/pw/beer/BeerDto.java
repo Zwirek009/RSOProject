@@ -18,7 +18,7 @@ public class BeerDto {
 
 	protected int ibu;
 
-	protected long date;
+	protected String date;
 
 	protected int left;
 
@@ -32,7 +32,7 @@ public class BeerDto {
 	public BeerDto() {
 	}
 
-	public BeerDto(long userId, @NotNull String name, @NotNull String style, int abv, int blg, int ibu, long date, int left, int price, @NotNull String desc, long regionId) {
+	public BeerDto(long userId, @NotNull String name, @NotNull String style, int abv, int blg, int ibu, @NotNull String date, int left, int price, @NotNull String desc, long regionId) {
 		this.userId = userId;
 		this.name = name;
 		this.style = style;
@@ -94,11 +94,11 @@ public class BeerDto {
 		this.ibu = ibu;
 	}
 
-	public long getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(long date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 

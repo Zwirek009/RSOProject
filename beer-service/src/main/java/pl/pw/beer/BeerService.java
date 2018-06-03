@@ -4,7 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.pw.region.RegionRepository;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,6 +14,8 @@ public class BeerService {
 
 	private final BeerRepository beerRepository;
 	private final RegionRepository regionRepository;
+
+	private static final DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE;
 
 	@Autowired
 	public BeerService(BeerRepository beerRepository, RegionRepository regionRepository) {
@@ -26,17 +29,22 @@ public class BeerService {
 	                    int abv,
 	                    int blg,
 	                    int ibu,
-	                    long date,
+	                    String date,
 	                    int left,
 	                    int price,
 	                    String desc,
 	                    long regionId) {
-		regionRepository.findById(regionId).ifPresent(region -> beerRepository.save(new Beer(userId, name, style, abv, blg, ibu, date, left, price, desc, region)));
+		LocalDate localDate = LocalDate.parse(date, formatter);
+		regionRepository.findById(regionId).ifPresent(region -> beerRepository.save(new Beer(userId, name, style, abv, blg, ibu, localDate, left, price, desc, region)));
 	}
 
-	public Beer getBeer(long id) {
+	public Beer getBeer(long id) throws IllegalArgumentException {
 		Optional<Beer> beer = beerRepository.findById(id);
-		return beer.orElse(null);
+		if(beer.isPresent()) {
+			return beer.get();
+		} else {
+			throw new IllegalArgumentException("no beer with given id " + id);
+		}
 	}
 
 	public List<Beer> getBeers(long userId) {
@@ -51,27 +59,19 @@ public class BeerService {
 		return beerRepository.findByRegion_RegionId(regionId);
 	}
 
-	public List<Beer> getYoungerBeers(long dateLowLimit) {
-		return beerRepository.findByDateIsGreaterThanEqual(dateLowLimit);
-	}
-
-	public List<Beer> getOlderBeers(long dateHighLimit) {
-		return beerRepository.findByDateIsLessThanEqual(dateHighLimit);
-	}
-
-	public List<Beer> getBeers(Long userId, Long regionId, String style, Long dateFrom, Long dateTo) {
-		long from, to;
+	public List<Beer> getBeers(Long userId, Long regionId, String style, String dateFrom, String dateTo) {
+		LocalDate from, to;
 
 		if (dateFrom != null) {
-			from = dateFrom;
+			from = LocalDate.parse(dateFrom, formatter);
 		} else {
-			from = 0L;
+			from = LocalDate.parse("2010-01-01", formatter);
 		}
 
 		if(dateTo != null) {
-			to = dateTo;
+			to = LocalDate.parse(dateTo, formatter);
 		} else {
-			to = Calendar.getInstance().getTimeInMillis();
+			to = LocalDate.now();
 		}
 
 		if(userId != null) {
@@ -109,9 +109,11 @@ public class BeerService {
 		}
 	}
 
-	public void remove(long beerId) {
+	public void remove(long beerId) throws IllegalArgumentException {
 		if(beerRepository.existsById(beerId)) {
 			beerRepository.deleteById(beerId);
+		} else {
+			throw new IllegalArgumentException("no beer with given id " + beerId);
 		}
 	}
 

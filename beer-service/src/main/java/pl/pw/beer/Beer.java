@@ -4,6 +4,7 @@ import pl.pw.region.Region;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 
 @Entity
 @Table(name="beer")
@@ -27,7 +28,7 @@ public class Beer {
 
 	private int ibu;
 
-	private long date;
+	private LocalDate date;
 
 	private int left;
 
@@ -44,7 +45,7 @@ public class Beer {
 	public Beer() {
 	}
 
-	public Beer(long userId, @NotNull String name, @NotNull String style, int abv, int blg, int ibu, long date, int left, int price, @NotNull String desc, @NotNull Region region) {
+	public Beer(long userId, @NotNull String name, @NotNull String style, int abv, int blg, int ibu, LocalDate date, int left, int price, @NotNull String desc, @NotNull Region region) {
 		this.userId = userId;
 		this.name = name;
 		this.style = style;
@@ -114,11 +115,11 @@ public class Beer {
 		this.ibu = ibu;
 	}
 
-	public long getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
 
-	public void setDate(long date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 
