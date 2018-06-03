@@ -16,4 +16,4 @@ services:
   frontend:
     image: zwirek009/rsoproject_frontend:latest
     deploy:
-      replicas: 10
+      replicas: 5
