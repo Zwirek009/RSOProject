@@ -107,5 +107,13 @@
       "endpoint": "/beer/get_younger_beer/.*",
       "method": "GET"
     }
+  },
+  "/api/beer/find": {
+    "GET": {
+      "permissions": "*",
+      "service": "beer",
+      "endpoint": "/beer/find",
+      "method": "GET"
+    }
   }
 }
