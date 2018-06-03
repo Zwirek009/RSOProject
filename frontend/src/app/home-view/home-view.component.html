@@ -2,21 +2,32 @@
   <div class="leftPanel">
       <div class="filters">
           <mat-form-field>
-              <mat-select placeholder="City">
+              <mat-select placeholder="City" [(value)]="filterRegion">
                 <mat-option *ngFor="let city of beerService.regions" [value]="city.city">
                   {{ city.city }}
                 </mat-option>
               </mat-select>
             </mat-form-field>
             <mat-form-field>
-              <mat-select placeholder="Style">
+              <mat-select placeholder="Style" [(value)]="filterStyle">
                   <mat-option *ngFor="let beer of beerService.beers" [value]="beer.style">
                     {{ beer.style }}
                   </mat-option>
                 </mat-select>
             </mat-form-field>
+            <mat-form-field>
+              <input matInput [matDatepicker]="from" placeholder="Date From" [(ngModel)]="filterDateFrom">
+              <mat-datepicker-toggle matSuffix [for]="from"></mat-datepicker-toggle>
+              <mat-datepicker #from></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput [matDatepicker]="to" placeholder="Date To" [(ngModel)]="filterDateTo">
+              <mat-datepicker-toggle matSuffix [for]="to"></mat-datepicker-toggle>
+              <mat-datepicker #to></mat-datepicker>
+            </mat-form-field>
             <div class="buttonHolder">
-              <button mat-button>Filter</button>
+              <button mat-button (click)="filter()">Filter</button>
+              <button mat-button (click)="clear()">Clear</button>
             </div>
       </div>
   </div>

@@ -13,23 +13,26 @@ export class BeerService {
 
   constructor(private http: HttpClient) { }
 
-  getBeer(beerId: string) {
+  getBeers(filter: Filter) {
     const enco: any = new HttpHeaders()
     .set('Content-Type', 'application/x-www-form-urlencoded')
     .set('X-Requested-With', 'XMLHttpRequest');
-    this.http.get('http://localhost:3000/api/beer/get/' + beerId, { headers: enco, withCredentials: true }).subscribe(data => {
+    const params = new HttpParams();
+    this.http.get('http://localhost:3000/api/beer/find',
+    { headers: enco, withCredentials: true, params: JSON.parse(filter.toJson()) }).subscribe(data => {
+      this.beers = JSON.parse(data.toString());
       console.log(data);
     });
   }
 
-  getAllBeers(userId: string) {
-    const enco: any = new HttpHeaders()
-    .set('Content-Type', 'application/x-www-form-urlencoded')
-    .set('X-Requested-With', 'XMLHttpRequest');
-    this.http.get('http://localhost:3000/api/beer/get_by_user/' + userId, { headers: enco, withCredentials: true }).subscribe(data => {
-      this.beers = JSON.parse(data.toString());
-      console.log(data);
+  findRegionId(value: string): Number {
+    let returned = 0;
+    this.regions.forEach(element => {
+      if (element.city.localeCompare(value) === 0) {
+        returned = element.regionId;
+      }
     });
+    return returned;
   }
 
   getRegions() {
@@ -40,41 +43,6 @@ export class BeerService {
       this.regions = JSON.parse(data.toString());
       console.log(data);
     });
-  }
-
-  getByRegion(regionId: string) {
-    const enco: any = new HttpHeaders()
-    .set('Content-Type', 'application/x-www-form-urlencoded')
-    .set('X-Requested-With', 'XMLHttpRequest');
-    this.http.get('http://localhost:3000/api/beer/get_by_region/' + regionId, { headers: enco, withCredentials: true }).subscribe(data => {
-      console.log(data);
-    });
-  }
-
-  getByUser(userId: string) {
-    const enco: any = new HttpHeaders()
-    .set('Content-Type', 'application/x-www-form-urlencoded')
-    .set('X-Requested-With', 'XMLHttpRequest');
-    this.http.get('http://localhost:3000/api/beer/get_by_user/' + userId, { headers: enco, withCredentials: true }).subscribe(data => {
-      console.log(data);
-    });
-  }
-
-  getByStyle(style: string) {
-    const enco: any = new HttpHeaders()
-    .set('Content-Type', 'application/x-www-form-urlencoded')
-    .set('X-Requested-With', 'XMLHttpRequest');
-    this.http.get('http://localhost:3000/api/beer/get_by_style/' + style, { headers: enco, withCredentials: true }).subscribe(data => {
-      console.log(data);
-    });
-  }
-
-  getYounger() {
-
-  }
-
-  getOlder () {
-
   }
 
   addBeer(beer: any) {
@@ -101,5 +69,25 @@ export class BeerService {
         headers: enco, withCredentials: true
       }
     );
+  }
+}
+
+export class Filter {
+  style: string;
+  dateFrom: Number;
+  dateTo: Number;
+  userId: string;
+  regionId: Number;
+
+  constructor( style ?: string, dateFrom ?, dateTo ?, userId ?, regionId ?: Number ) {
+    this.style = style || undefined;
+    this.dateFrom = dateFrom || undefined;
+    this.dateTo = dateTo || undefined;
+    this.userId = userId || undefined;
+    this.regionId = regionId || undefined;
+  }
+
+  toJson() {
+    return JSON.stringify(this);
   }
 }

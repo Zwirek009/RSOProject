@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BeerService } from '../beer.service';
+import { BeerService, Filter } from '../beer.service';
 import {MatSnackBar} from '@angular/material';
 
 @Component({
@@ -46,14 +46,6 @@ export class ProfileComponent implements OnInit {
       (err) => {
         this.openSnackBar('Error', err.toString());
       });
-  }
-
-  get() {
-    this.beerService.getAllBeers('1');
-  }
-
-  getRegion() {
-    this.beerService.getRegions();
   }
 
   getUser(): string {

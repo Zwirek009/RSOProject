@@ -22,6 +22,8 @@ import { BeerComponent } from './beer/beer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule} from '@angular/material';
 
 const appRoutes: Routes = [
   { path: '', component: MainPageComponent },
@@ -50,7 +52,9 @@ const appRoutes: Routes = [
     HttpClientModule,
     MatToolbarModule,
     MatSnackBarModule,
+    MatDatepickerModule,
     MatButtonModule,
+    MatNativeDateModule,
     MatInputModule,
     BrowserAnimationsModule,
     FormsModule,
