@@ -9,21 +9,11 @@ services:
       - "3000:3000"
   auth-service:
     image: zwirek009/rsoproject_auth-service:latest
-    ports:
-      - "8080:8080"
-    links:
-      - redis:redis
   beer-service:
     image: zwirek009/rsoproject_beer-service:latest
-    ports:
-      - "8082:8082"
   redis:
     image: "redis:alpine"
-    ports:
-      - "6379:6379"
   frontend:
     image: zwirek009/rsoproject_frontend:latest
     deploy:
       replicas: 10
-    ports:
-      - "4200:4200"
