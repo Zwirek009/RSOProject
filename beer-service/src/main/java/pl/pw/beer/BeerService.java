@@ -16,6 +16,8 @@ public class BeerService {
 	private final RegionRepository regionRepository;
 
 	private static final DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE;
+	private static final String MAX_DATE = "3000-12-31";
+	private static final String MIN_DATE = "1970-01-01";
 
 	@Autowired
 	public BeerService(BeerRepository beerRepository, RegionRepository regionRepository) {
@@ -33,8 +35,11 @@ public class BeerService {
 	                    int left,
 	                    int price,
 	                    String desc,
-	                    long regionId) {
+	                    long regionId) throws IllegalArgumentException {
 		LocalDate localDate = LocalDate.parse(date, formatter);
+		if(localDate.isAfter(LocalDate.now())) {
+			throw new IllegalArgumentException("Cant add beer with future production date");
+		}
 		regionRepository.findById(regionId).ifPresent(region -> beerRepository.save(new Beer(userId, name, style, abv, blg, ibu, localDate, left, price, desc, region)));
 	}
 
@@ -65,13 +70,13 @@ public class BeerService {
 		if (dateFrom != null) {
 			from = LocalDate.parse(dateFrom, formatter);
 		} else {
-			from = LocalDate.parse("2010-01-01", formatter);
+			from = LocalDate.parse(MIN_DATE, formatter);
 		}
 
 		if(dateTo != null) {
 			to = LocalDate.parse(dateTo, formatter);
 		} else {
-			to = LocalDate.now();
+			to = LocalDate.parse(MAX_DATE, formatter);
 		}
 
 		if(userId != null) {
