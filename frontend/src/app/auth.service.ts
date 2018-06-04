@@ -59,7 +59,9 @@ export class AuthService {
       .set('Content-Type', 'application/x-www-form-urlencoded')
       .set('X-Requested-With', 'XMLHttpRequest');
     this.http.delete('http://localhost:3000/api/users/current', { headers: enco, withCredentials: true }).subscribe(data => {
-      console.log(data);
+      localStorage.setItem('logged', 'false');
+      localStorage.setItem('user', undefined);
+      deleteAllCookies();
     });
   }
 
@@ -69,6 +71,18 @@ export class AuthService {
       .set('X-Requested-With', 'XMLHttpRequest');
       this.http.delete('http://localhost:3000/api/sessions', { headers: enco, withCredentials: true }).subscribe(data => {
       console.log(data);
+      deleteAllCookies();
     });
+  }
+}
+
+function deleteAllCookies() {
+  const cookies = document.cookie.split(';');
+
+  for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i];
+      const eqPos = cookie.indexOf('=');
+      const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+      document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
   }
 }

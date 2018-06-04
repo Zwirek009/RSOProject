@@ -10,6 +10,7 @@ export class BeerService {
 
   regions;
   beers;
+  beer;
 
   constructor(private http: HttpClient) { }
 

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BeerService, Filter } from '../beer.service';
-import {MatSnackBar} from '@angular/material';
+import {MatSnackBar, ErrorStateMatcher} from '@angular/material';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -20,15 +21,18 @@ export class ProfileComponent implements OnInit {
     price: '',
     desc: '',
     region: '',
-    date: 0,
+    date: '',
   };
 
   dateBasic;
   region;
 
-  constructor(private beerService: BeerService, public snackBar: MatSnackBar, public authService: AuthService) { }
+  constructor(private beerService: BeerService, public snackBar: MatSnackBar, public authService: AuthService, public router: Router) { }
 
   ngOnInit() {
+    if (localStorage.getItem('logged') === 'false') {
+      this.router.navigateByUrl('');
+    }
   }
 
   openSnackBar(message: string, action: string) {
@@ -44,8 +48,13 @@ export class ProfileComponent implements OnInit {
     if (this.region !== undefined) {
       this.beer.region = this.beerService.findRegionId(this.region).toString();
     }
-    if (this.beer.name === '' || this.beer.style === '') {
-      this.openSnackBar('Error', 'Name and Style cannot be empty');
+    if (this.beer.name === '' || this.beer.style === '' || this.beer.region === '' || this.beer.date === '' ) {
+      this.openSnackBar('Error', 'Name, Style, Region and Production Date cannot be empty');
+      return;
+    }
+    if (isNaN(Number(this.beer.abv)) || isNaN(Number(this.beer.ibu)) || isNaN(Number(this.beer.blg))
+      || isNaN(Number(this.beer.left)) || isNaN(Number(this.beer.price))) {
+      this.openSnackBar('Error', 'ABV, BLG, IBU, price and Quantity must be a number');
       return;
     }
     this.beerService.addBeer(this.beer).subscribe(
@@ -60,6 +69,7 @@ export class ProfileComponent implements OnInit {
 
   remove() {
     this.authService.remove();
+    this.router.navigateByUrl('');
   }
 
   getUser(): string {
@@ -72,7 +82,7 @@ export class ProfileComponent implements OnInit {
     this.beer.style = '';
     this.beer.abv = '';
     this.beer.blg = '';
-    this.beer.date = 0;
+    this.beer.date = '';
     this.beer.desc = '';
     this.beer.ibu = '';
     this.beer.left = '';

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BeerService } from '../beer.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-beer',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BeerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private beerService: BeerService, private router: Router) { }
 
   ngOnInit() {
+    if (localStorage.getItem('logged') === 'false') {
+      this.router.navigateByUrl('');
+    }
   }
 
 }

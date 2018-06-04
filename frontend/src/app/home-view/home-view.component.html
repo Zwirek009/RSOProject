@@ -37,7 +37,7 @@
             <table mat-table #table [dataSource]="beerService.beers">
                   <ng-container matColumnDef="name">
                     <th mat-header-cell *matHeaderCellDef> Name </th>
-                    <td (click)="check(element.name)" mat-cell *matCellDef="let element"> {{element.name}} </td>
+                    <td (click)="check(element)" mat-cell *matCellDef="let element"> {{element.name}} </td>
                   </ng-container>
               
                   <ng-container matColumnDef="style">

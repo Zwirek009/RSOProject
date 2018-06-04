@@ -23,11 +23,15 @@ export class HomeViewComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (localStorage.getItem('logged') === 'false') {
+      this.router.navigateByUrl('');
+    }
     this.beerService.getRegions();
     this.beerService.getBeers(new Filter());
   }
 
-  check(value: string) {
+  check(value: any) {
+    this.beerService.beer = value;
     this.router.navigateByUrl('/beer');
     console.log(value);
   }
