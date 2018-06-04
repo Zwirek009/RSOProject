@@ -19,11 +19,12 @@ export class ProfileComponent implements OnInit {
     left: '',
     price: '',
     desc: '',
-    region: '1',
-    date: '0',
+    region: '',
+    date: 0,
   };
 
   dateBasic;
+  region;
 
   constructor(private beerService: BeerService, public snackBar: MatSnackBar, public authService: AuthService) { }
 
@@ -37,9 +38,12 @@ export class ProfileComponent implements OnInit {
   }
 
   add() {
-    // if (this.dateBasic !== undefined) {
-    //   this.beer.date = this.dateBasic.getTime().toString();
-    // }
+    if (this.dateBasic !== undefined) {
+      this.beer.date = this.dateBasic.toISOString().slice(0, 10);
+    }
+    if (this.region !== undefined) {
+      this.beer.region = this.beerService.findRegionId(this.region).toString();
+    }
     if (this.beer.name === '' || this.beer.style === '') {
       this.openSnackBar('Error', 'Name and Style cannot be empty');
       return;
@@ -68,11 +72,13 @@ export class ProfileComponent implements OnInit {
     this.beer.style = '';
     this.beer.abv = '';
     this.beer.blg = '';
-    this.beer.date = '';
+    this.beer.date = 0;
     this.beer.desc = '';
     this.beer.ibu = '';
     this.beer.left = '';
     this.beer.price = '';
+    this.beer.region = '';
     this.dateBasic = undefined;
+    this.region = undefined;
   }
 }

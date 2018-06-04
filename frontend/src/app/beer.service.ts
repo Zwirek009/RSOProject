@@ -51,7 +51,7 @@ export class BeerService {
       .set('X-Requested-With', 'XMLHttpRequest');
 
     const body: any = new HttpParams()
-      .set('userId', JSON.parse(localStorage.getItem('user')).id)
+      .set('userId', JSON.parse(localStorage.getItem('user')).id.toString())
       .set('name', beer.name)
       .set('desc', beer.desc)
       .set('style', beer.style)

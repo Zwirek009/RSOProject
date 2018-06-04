@@ -31,6 +31,13 @@
       <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
       <mat-datepicker #date></mat-datepicker>
     </mat-form-field>
+    <mat-form-field class="date">
+      <mat-select placeholder="City" [(value)]="region">
+        <mat-option *ngFor="let city of beerService.regions" [value]="city.city">
+          {{ city.city }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
     <mat-form-field class="example-full-width input">
       <input matInput placeholder="Price" [(ngModel)]="beer.price">
     </mat-form-field>
