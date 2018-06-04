@@ -17,3 +17,5 @@ services:
     image: zwirek009/rsoproject_frontend:latest
     deploy:
       replicas: 5
+    ports:
+      - "4200:4200"
