@@ -5,7 +5,9 @@ const cors = require('@koa/cors');
 
 app.use(bodyParser())
 app.use(cors({
-  credentials: true
+  credentials: true,
+  origin: (ctx) =>
+  ctx.headers.origin
 }))
 
 
