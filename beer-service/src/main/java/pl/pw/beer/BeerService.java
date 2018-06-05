@@ -35,11 +35,8 @@ public class BeerService {
 	                    int left,
 	                    int price,
 	                    String desc,
-	                    long regionId) throws IllegalArgumentException {
+	                    long regionId) {
 		LocalDate localDate = LocalDate.parse(date, formatter);
-		if(localDate.isAfter(LocalDate.now())) {
-			throw new IllegalArgumentException("Cant add beer with future production date");
-		}
 		regionRepository.findById(regionId).ifPresent(region -> beerRepository.save(new Beer(userId, name, style, abv, blg, ibu, localDate, left, price, desc, region)));
 	}
 
