@@ -43,6 +43,7 @@ public class Beer {
 	private Region region;
 
 	public Beer() {
+		region = new Region();
 	}
 
 	public Beer(long userId, @NotNull String name, @NotNull String style, int abv, int blg, int ibu, LocalDate date, int left, int price, @NotNull String desc, @NotNull Region region) {

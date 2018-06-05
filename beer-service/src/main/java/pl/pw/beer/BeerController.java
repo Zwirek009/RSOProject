@@ -55,12 +55,12 @@ class BeerController {
 
 	// curl -v -X GET 'http://localhost:8082/beer/find?userId=1&style=style1'
 	@RequestMapping(value = "/find", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Beer>> get(@RequestParam(value = "userId", required = false) Long userId,
+	public ResponseEntity<Iterable<Beer>> findAll(@RequestParam(value = "userId", required = false) Long userId,
 	                                      @RequestParam(value = "regionId", required = false) Long regionId,
 	                                      @RequestParam(value = "style", required = false) String style,
 	                                      @RequestParam(value = "dateFrom", required = false) String dateFrom,
 	                                      @RequestParam(value = "dateTo", required = false) String dateTo) {
-		return ResponseEntity.ok(beerService.getBeers(userId, regionId, style, dateFrom, dateTo));
+		return ResponseEntity.ok(beerService.findAllBeers(userId, regionId, style, dateFrom, dateTo));
 	}
 
 	// =================================================================================================================
