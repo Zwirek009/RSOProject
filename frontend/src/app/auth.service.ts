@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import * as config from './config';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +8,8 @@ import * as config from './config';
 export class AuthService {
 
   constructor(private http: HttpClient) { }
+
+  host = 'api-gateway:3000';
 
   makeLogin(user, pass: string): Observable<any> {
     const enco: any = new HttpHeaders()
@@ -18,7 +19,7 @@ export class AuthService {
     const body: any = new HttpParams()
       .set('username', user)
       .set('password', pass);
-    return this.http.post('http://localhost:3000/api/sessions',
+    return this.http.post('http://' + this.host + '/api/sessions',
       body.toString(),
       {
         headers: enco, withCredentials: true
@@ -30,7 +31,7 @@ export class AuthService {
     const enco: any = new HttpHeaders()
       .set('Content-Type', 'application/x-www-form-urlencoded')
       .set('X-Requested-With', 'XMLHttpRequest');
-    this.http.get('http://localhost:3000/api/users/current', { headers: enco, withCredentials: true }).subscribe(data => {
+    this.http.get('http://' + this.host + '/api/users/current', { headers: enco, withCredentials: true }).subscribe(data => {
       console.log(data);
       localStorage.setItem('logged', 'true');
       localStorage.setItem('user', String(data));
@@ -46,7 +47,7 @@ export class AuthService {
       .set('name', user)
       .set('password', pass)
       .set('role', 'USER');
-    return this.http.post('http://localhost:3000/api/users',
+    return this.http.post('http://' + this.host + '/api/users',
       body.toString(),
       {
         headers: enco
@@ -58,7 +59,7 @@ export class AuthService {
     const enco: any = new HttpHeaders()
       .set('Content-Type', 'application/x-www-form-urlencoded')
       .set('X-Requested-With', 'XMLHttpRequest');
-    this.http.delete('http://localhost:3000/api/users/current', { headers: enco, withCredentials: true }).subscribe(data => {
+    this.http.delete('http://' + this.host + '/api/users/current', { headers: enco, withCredentials: true }).subscribe(data => {
       localStorage.setItem('logged', 'false');
       localStorage.setItem('user', undefined);
       deleteAllCookies();
@@ -69,7 +70,7 @@ export class AuthService {
     const enco: any = new HttpHeaders()
       .set('Content-Type', 'application/x-www-form-urlencoded')
       .set('X-Requested-With', 'XMLHttpRequest');
-      this.http.delete('http://localhost:3000/api/sessions', { headers: enco, withCredentials: true }).subscribe(data => {
+      this.http.delete('http://' + this.host + '/api/sessions', { headers: enco, withCredentials: true }).subscribe(data => {
       console.log(data);
       deleteAllCookies();
     });

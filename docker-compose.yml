@@ -21,3 +21,7 @@ services:
     build: frontend
     ports:
       - "4200:4200"
+    links: 
+      - api-gateway:api-gateway
+    depends_on:
+      - api-gateway

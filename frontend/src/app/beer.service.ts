@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import * as config from './config';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +11,8 @@ export class BeerService {
   beers;
   beer;
 
+  host = 'api-gateway:3000';
+
   constructor(private http: HttpClient) { }
 
   getBeers(filter: Filter) {
@@ -19,7 +20,7 @@ export class BeerService {
     .set('Content-Type', 'application/x-www-form-urlencoded')
     .set('X-Requested-With', 'XMLHttpRequest');
     const params = new HttpParams();
-    this.http.get('http://localhost:3000/api/beer/find',
+    this.http.get('http://' + this.host + '/api/beer/find',
     { headers: enco, withCredentials: true, params: JSON.parse(filter.toJson()) }).subscribe(data => {
       this.beers = JSON.parse(data.toString());
       console.log(data);
@@ -40,7 +41,7 @@ export class BeerService {
     const enco: any = new HttpHeaders()
     .set('Content-Type', 'application/x-www-form-urlencoded')
     .set('X-Requested-With', 'XMLHttpRequest');
-    this.http.get('http://localhost:3000/api/region/get', { headers: enco, withCredentials: true }).subscribe(data => {
+    this.http.get('http://' + this.host + '/api/region/get', { headers: enco, withCredentials: true }).subscribe(data => {
       this.regions = JSON.parse(data.toString());
       console.log(data);
     });
@@ -64,7 +65,7 @@ export class BeerService {
       .set('ibu', beer.ibu)
       .set('price', beer.price);
       console.log(body);
-    return this.http.post('http://localhost:3000/api/beer/add',
+    return this.http.post('http://' + this.host + '/api/beer/add',
       body.toString(),
       {
         headers: enco, withCredentials: true
