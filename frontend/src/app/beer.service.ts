@@ -20,7 +20,7 @@ export class BeerService {
     .set('Content-Type', 'application/x-www-form-urlencoded')
     .set('X-Requested-With', 'XMLHttpRequest');
     const params = new HttpParams();
-    this.http.get('http://' + this.host + '/api/beer/find',
+    this.http.get('/api/beer/find',
     { headers: enco, withCredentials: true, params: JSON.parse(filter.toJson()) }).subscribe(data => {
       this.beers = JSON.parse(data.toString());
       console.log(data);
@@ -41,7 +41,7 @@ export class BeerService {
     const enco: any = new HttpHeaders()
     .set('Content-Type', 'application/x-www-form-urlencoded')
     .set('X-Requested-With', 'XMLHttpRequest');
-    this.http.get('http://' + this.host + '/api/region/get', { headers: enco, withCredentials: true }).subscribe(data => {
+    this.http.get('/api/region/get', { headers: enco, withCredentials: true }).subscribe(data => {
       this.regions = JSON.parse(data.toString());
       console.log(data);
     });
@@ -65,7 +65,7 @@ export class BeerService {
       .set('ibu', beer.ibu)
       .set('price', beer.price);
       console.log(body);
-    return this.http.post('http://' + this.host + '/api/beer/add',
+    return this.http.post('/api/beer/add',
       body.toString(),
       {
         headers: enco, withCredentials: true

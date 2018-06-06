@@ -27,7 +27,7 @@ export class ProfileComponent implements OnInit {
   dateBasic;
   region;
 
-  constructor(private beerService: BeerService, public snackBar: MatSnackBar, public authService: AuthService, public router: Router) { }
+  constructor(public beerService: BeerService, public snackBar: MatSnackBar, public authService: AuthService, public router: Router) { }
 
   ngOnInit() {
     if (localStorage.getItem('logged') === 'false') {

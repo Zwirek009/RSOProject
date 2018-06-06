@@ -19,7 +19,7 @@ export class AuthService {
     const body: any = new HttpParams()
       .set('username', user)
       .set('password', pass);
-    return this.http.post('http://' + this.host + '/api/sessions',
+    return this.http.post('/api/sessions',
       body.toString(),
       {
         headers: enco, withCredentials: true
@@ -31,7 +31,7 @@ export class AuthService {
     const enco: any = new HttpHeaders()
       .set('Content-Type', 'application/x-www-form-urlencoded')
       .set('X-Requested-With', 'XMLHttpRequest');
-    this.http.get('http://' + this.host + '/api/users/current', { headers: enco, withCredentials: true }).subscribe(data => {
+    this.http.get('/api/users/current', { headers: enco, withCredentials: true }).subscribe(data => {
       console.log(data);
       localStorage.setItem('logged', 'true');
       localStorage.setItem('user', String(data));
@@ -47,7 +47,7 @@ export class AuthService {
       .set('name', user)
       .set('password', pass)
       .set('role', 'USER');
-    return this.http.post('http://' + this.host + '/api/users',
+    return this.http.post('/api/users',
       body.toString(),
       {
         headers: enco
@@ -59,7 +59,7 @@ export class AuthService {
     const enco: any = new HttpHeaders()
       .set('Content-Type', 'application/x-www-form-urlencoded')
       .set('X-Requested-With', 'XMLHttpRequest');
-    this.http.delete('http://' + this.host + '/api/users/current', { headers: enco, withCredentials: true }).subscribe(data => {
+    this.http.delete('/api/users/current', { headers: enco, withCredentials: true }).subscribe(data => {
       localStorage.setItem('logged', 'false');
       localStorage.setItem('user', undefined);
       deleteAllCookies();
@@ -70,7 +70,7 @@ export class AuthService {
     const enco: any = new HttpHeaders()
       .set('Content-Type', 'application/x-www-form-urlencoded')
       .set('X-Requested-With', 'XMLHttpRequest');
-      this.http.delete('http://' + this.host + '/api/sessions', { headers: enco, withCredentials: true }).subscribe(data => {
+      this.http.delete('/api/sessions', { headers: enco, withCredentials: true }).subscribe(data => {
       console.log(data);
       deleteAllCookies();
     });

@@ -18,7 +18,7 @@ export class HomeViewComponent implements OnInit {
   filterRegion;
   filterStyle;
 
-  constructor(router: Router, private beerService: BeerService) {
+  constructor(router: Router, public beerService: BeerService) {
     this.router = router;
   }
 
