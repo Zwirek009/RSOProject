@@ -36,6 +36,8 @@ export class LoginFormComponent implements OnInit {
         },
         (err) => {
           if (err.status === 200) {
+            localStorage.setItem('logged', 'true');
+            localStorage.setItem('user', '{"id":1,"name":"' + this.emailFormControl.value + '","role":"USER"}');
             this.authService.getInfo();
             this.router.navigateByUrl('/home');
           }

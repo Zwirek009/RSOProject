@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class BeerComponent implements OnInit {
 
-  constructor(private beerService: BeerService, private router: Router) { }
+  constructor(public beerService: BeerService, private router: Router) { }
 
   ngOnInit() {
     if (localStorage.getItem('logged') === 'false') {
