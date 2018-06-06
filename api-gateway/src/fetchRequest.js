@@ -20,7 +20,7 @@ exports.fetchRequest = restEndpoint(async ctx => {
 function prepareUri(ctx) {
   const querystring1 = ctx.request.querystring ? '?' + ctx.request.querystring : ''
   ret = 'http://' + hosts[ctx.match.service] + ctx.match.endpoint + querystring1
-  if (ctx.method == "GET") {
+  if (ctx.method == "GET" && !ctx.request.querystring) {
     ret = ret + '?' + querystring.stringify(ctx.request.body)
   }
   return ret
