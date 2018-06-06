@@ -1,5 +1,5 @@
 const fetch = require('node-fetch')
-// const querystring = require('query-string')
+const querystring = require('query-string')
 
 const { restEndpoint } = require('./restEndpoint')
 const { hosts } = require('./properties')
@@ -18,8 +18,12 @@ exports.fetchRequest = restEndpoint(async ctx => {
 })
 
 function prepareUri(ctx) {
-  const querystring = ctx.request.querystring ? '?' + ctx.request.querystring : ''
-  return 'http://' + hosts[ctx.match.service] + ctx.match.endpoint + querystring
+  const querystring1 = ctx.request.querystring ? '?' + ctx.request.querystring : ''
+  ret = 'http://' + hosts[ctx.match.service] + ctx.match.endpoint + querystring1
+  if (ctx.method == "GET") {
+    ret = ret + '?' + querystring.stringify(ctx.request.body)
+  }
+  return ret
 }
 
 function prepareData(ctx) {
